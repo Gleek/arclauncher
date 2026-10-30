@@ -108,7 +108,7 @@ List<CalendarEvent> parseCalendarEvents((String, DateTime) input) {
     result.add(
       CalendarEvent(event.summary?.trim() ?? '', start, end, event.isAllDay),
     );
-    if (result.length == 50) break;
+    if (result.length == 500) break;
   }
   return result;
 }

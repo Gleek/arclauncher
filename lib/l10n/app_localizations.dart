@@ -1596,12 +1596,6 @@ abstract class AppLocalizations {
   /// **'Untitled event'**
   String get calendarUntitled;
 
-  /// No description provided for @calendarNoEvents.
-  ///
-  /// In en, this message translates to:
-  /// **'No upcoming events in the next 7 days.'**
-  String get calendarNoEvents;
-
   /// No description provided for @calendarInvalidUrl.
   ///
   /// In en, this message translates to:
@@ -1611,7 +1605,7 @@ abstract class AppLocalizations {
   /// No description provided for @calendarHelp.
   ///
   /// In en, this message translates to:
-  /// **'Shows your next three events over seven days. Refreshes every 15 minutes. Use Google Calendar’s secret iCal address, not a calendar webpage. Keep the URL private.'**
+  /// **'Shows the next seven days on Home. Select a day to see all its events. Refreshes every 15 minutes. Use Google Calendar’s secret iCal address and keep it private.'**
   String get calendarHelp;
 
   /// No description provided for @calendarCancel.
@@ -1619,6 +1613,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Cancel'**
   String get calendarCancel;
+
+  /// No description provided for @calendarDayEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'No events'**
+  String get calendarDayEmpty;
+
+  /// No description provided for @calendarContinues.
+  ///
+  /// In en, this message translates to:
+  /// **'Continues'**
+  String get calendarContinues;
+
+  /// No description provided for @calendarClose.
+  ///
+  /// In en, this message translates to:
+  /// **'Close'**
+  String get calendarClose;
 }
 
 class _AppLocalizationsDelegate

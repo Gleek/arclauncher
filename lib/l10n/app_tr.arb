@@ -212,8 +212,10 @@
     "calendarRemove": "Disconnect calendar",
     "calendarAllDay": "All day",
     "calendarUntitled": "Untitled event",
-    "calendarNoEvents": "No upcoming events in the next 7 days.",
     "calendarInvalidUrl": "Enter a valid HTTPS iCal URL.",
-    "calendarHelp": "Shows your next three events over seven days. Refreshes every 15 minutes. Use Google Calendar’s secret iCal address, not a calendar webpage. Keep the URL private.",
-    "calendarCancel": "Cancel"
+    "calendarHelp": "Shows the next seven days on Home. Select a day to see all its events. Refreshes every 15 minutes. Use Google Calendar’s secret iCal address and keep it private.",
+    "calendarCancel": "Cancel",
+    "calendarDayEmpty": "No events",
+    "calendarContinues": "Continues",
+    "calendarClose": "Close"
 }

@@ -816,15 +816,21 @@ class AppLocalizationsVi extends AppLocalizations {
   String get calendarUntitled => 'Untitled event';
 
   @override
-  String get calendarNoEvents => 'No upcoming events in the next 7 days.';
-
-  @override
   String get calendarInvalidUrl => 'Enter a valid HTTPS iCal URL.';
 
   @override
   String get calendarHelp =>
-      'Shows your next three events over seven days. Refreshes every 15 minutes. Use Google Calendar’s secret iCal address, not a calendar webpage. Keep the URL private.';
+      'Shows the next seven days on Home. Select a day to see all its events. Refreshes every 15 minutes. Use Google Calendar’s secret iCal address and keep it private.';
 
   @override
   String get calendarCancel => 'Cancel';
+
+  @override
+  String get calendarDayEmpty => 'No events';
+
+  @override
+  String get calendarContinues => 'Continues';
+
+  @override
+  String get calendarClose => 'Close';
 }

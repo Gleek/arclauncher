@@ -4,8 +4,8 @@
 
 This fork is based on upstream Arc Launcher 1.2.0 and adds:
 
-- **Settings → Interface → Calendar:** an optional Home row showing the next three
-  events over seven days from an HTTPS iCal URL. It refreshes every 15 minutes,
+- **Settings → Interface → Calendar:** a seven-day Home calendar from an HTTPS iCal
+  URL, with multiple events per day. Select a day to open its full agenda. It refreshes every 15 minutes,
   caches the last successful feed privately on the device, and supports recurring,
   rescheduled, cancelled, and all-day events. Google Calendar's secret iCal address
   works here; a calendar webpage URL does not. The URL is masked in settings.

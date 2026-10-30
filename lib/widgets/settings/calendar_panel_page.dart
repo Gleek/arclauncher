@@ -57,7 +57,7 @@ class CalendarPanelPage extends StatelessWidget {
                       ? strings.calendarLoadFailed
                       : calendar.updatedAt != null
                       ? strings.calendarUpdated
-                      : strings.calendarHelp,
+                      : strings.calendarNotConfigured,
                 ),
                 onPressed: settings.calendarEnabled && !calendar.loading
                     ? () => calendar.refresh()
