@@ -26,6 +26,7 @@ import 'wallpaper_panel_page.dart';
 import 'status_bar_panel_page.dart';
 import 'accent_color_page.dart';
 import 'appearance_panel_page.dart';
+import 'calendar_panel_page.dart';
 import 'misc_panel_page.dart';
 
 class InterfaceSettingsPage extends StatelessWidget {
@@ -56,6 +57,12 @@ class InterfaceSettingsPage extends StatelessWidget {
                   leading: const Icon(Icons.play_circle_outline),
                   title: Text(localizations.watchNextSectionTitle, style: Theme.of(context).textTheme.bodyMedium),
                   onPressed: () => Navigator.of(context).pushNamed(WatchNextPanelPage.routeName),
+                ),
+                FocusableSettingsTile(
+                  showChevron: true,
+                  leading: const Icon(Icons.calendar_today_outlined),
+                  title: Text(localizations.calendar, style: Theme.of(context).textTheme.bodyMedium),
+                  onPressed: () => Navigator.of(context).pushNamed(CalendarPanelPage.routeName),
                 ),
                 FocusableSettingsTile(
                   showChevron: true,

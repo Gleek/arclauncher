@@ -771,4 +771,60 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get brightnessSlotNight => '22:00–6:00';
+
+  @override
+  String get showWallpaperCredits => 'Hiển thị nguồn hình nền';
+
+  @override
+  String get calendar => 'Calendar';
+
+  @override
+  String get calendarShow => 'Show calendar on Home';
+
+  @override
+  String get calendarUrl => 'iCal URL';
+
+  @override
+  String get calendarNotConfigured => 'No calendar connected';
+
+  @override
+  String get calendarConfigured => 'Calendar URL saved';
+
+  @override
+  String get calendarRefresh => 'Refresh now';
+
+  @override
+  String get calendarLoading => 'Loading calendar…';
+
+  @override
+  String get calendarLoadFailed =>
+      'Could not refresh. Check the iCal URL and your connection.';
+
+  @override
+  String get calendarUpdated => 'Calendar is up to date';
+
+  @override
+  String get calendarCached => 'Last saved calendar';
+
+  @override
+  String get calendarRemove => 'Disconnect calendar';
+
+  @override
+  String get calendarAllDay => 'All day';
+
+  @override
+  String get calendarUntitled => 'Untitled event';
+
+  @override
+  String get calendarNoEvents => 'No upcoming events in the next 7 days.';
+
+  @override
+  String get calendarInvalidUrl => 'Enter a valid HTTPS iCal URL.';
+
+  @override
+  String get calendarHelp =>
+      'Shows your next three events over seven days. Refreshes every 15 minutes. Use Google Calendar’s secret iCal address, not a calendar webpage. Keep the URL private.';
+
+  @override
+  String get calendarCancel => 'Cancel';
 }

@@ -1434,6 +1434,17 @@ class MockAppsService extends _i1.Mock implements _i16.AppsService {
       ) as _i9.Future<void>);
 
   @override
+  _i9.Future<void> deleteCategory(_i3.Category? category) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #deleteCategory,
+          [category],
+        ),
+        returnValue: _i9.Future<void>.value(),
+        returnValueForMissingStub: _i9.Future<void>.value(),
+      ) as _i9.Future<void>);
+
+  @override
   void moveSectionInMemory(
     int? oldIndex,
     int? newIndex,
@@ -1477,6 +1488,23 @@ class MockAppsService extends _i1.Mock implements _i16.AppsService {
       ) as _i9.Future<void>);
 
   @override
+  _i9.Future<void> moveCategory(
+    int? oldIndex,
+    int? newIndex,
+  ) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #moveCategory,
+          [
+            oldIndex,
+            newIndex,
+          ],
+        ),
+        returnValue: _i9.Future<void>.value(),
+        returnValueForMissingStub: _i9.Future<void>.value(),
+      ) as _i9.Future<void>);
+
+  @override
   _i9.Future<void> hideApplication(_i17.App? application) =>
       (super.noSuchMethod(
         Invocation.method(
@@ -1492,6 +1520,17 @@ class MockAppsService extends _i1.Mock implements _i16.AppsService {
       (super.noSuchMethod(
         Invocation.method(
           #showApplication,
+          [application],
+        ),
+        returnValue: _i9.Future<void>.value(),
+        returnValueForMissingStub: _i9.Future<void>.value(),
+      ) as _i9.Future<void>);
+
+  @override
+  _i9.Future<void> unHideApplication(_i17.App? application) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #unHideApplication,
           [application],
         ),
         returnValue: _i9.Future<void>.value(),
@@ -1885,6 +1924,33 @@ class MockSettingsService extends _i1.Mock implements _i18.SettingsService {
         returnValue: <String>[],
         returnValueForMissingStub: <String>[],
       ) as List<String>);
+
+  @override
+  bool get showWallpaperCredits => (super.noSuchMethod(
+        Invocation.getter(#showWallpaperCredits),
+        returnValue: false,
+        returnValueForMissingStub: false,
+      ) as bool);
+
+  @override
+  bool get calendarEnabled => (super.noSuchMethod(
+        Invocation.getter(#calendarEnabled),
+        returnValue: false,
+        returnValueForMissingStub: false,
+      ) as bool);
+
+  @override
+  String get calendarUrl => (super.noSuchMethod(
+        Invocation.getter(#calendarUrl),
+        returnValue: _i19.dummyValue<String>(
+          this,
+          Invocation.getter(#calendarUrl),
+        ),
+        returnValueForMissingStub: _i19.dummyValue<String>(
+          this,
+          Invocation.getter(#calendarUrl),
+        ),
+      ) as String);
 
   @override
   bool get redditWallpaperEnabled => (super.noSuchMethod(
@@ -2344,6 +2410,37 @@ class MockSettingsService extends _i1.Mock implements _i18.SettingsService {
         Invocation.method(
           #setUnsplashAuthor,
           [author],
+        ),
+        returnValue: _i9.Future<void>.value(),
+        returnValueForMissingStub: _i9.Future<void>.value(),
+      ) as _i9.Future<void>);
+
+  @override
+  _i9.Future<void> setShowWallpaperCredits(bool? enabled) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #setShowWallpaperCredits,
+          [enabled],
+        ),
+        returnValue: _i9.Future<void>.value(),
+        returnValueForMissingStub: _i9.Future<void>.value(),
+      ) as _i9.Future<void>);
+
+  @override
+  _i9.Future<void> setCalendarEnabled(bool? enabled) => (super.noSuchMethod(
+        Invocation.method(
+          #setCalendarEnabled,
+          [enabled],
+        ),
+        returnValue: _i9.Future<void>.value(),
+        returnValueForMissingStub: _i9.Future<void>.value(),
+      ) as _i9.Future<void>);
+
+  @override
+  _i9.Future<void> setCalendarUrl(String? url) => (super.noSuchMethod(
+        Invocation.method(
+          #setCalendarUrl,
+          [url],
         ),
         returnValue: _i9.Future<void>.value(),
         returnValueForMissingStub: _i9.Future<void>.value(),

@@ -1511,6 +1511,114 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'10 PM - 6 AM'**
   String get brightnessSlotNight;
+
+  /// No description provided for @showWallpaperCredits.
+  ///
+  /// In en, this message translates to:
+  /// **'Show wallpaper credits'**
+  String get showWallpaperCredits;
+
+  /// No description provided for @calendar.
+  ///
+  /// In en, this message translates to:
+  /// **'Calendar'**
+  String get calendar;
+
+  /// No description provided for @calendarShow.
+  ///
+  /// In en, this message translates to:
+  /// **'Show calendar on Home'**
+  String get calendarShow;
+
+  /// No description provided for @calendarUrl.
+  ///
+  /// In en, this message translates to:
+  /// **'iCal URL'**
+  String get calendarUrl;
+
+  /// No description provided for @calendarNotConfigured.
+  ///
+  /// In en, this message translates to:
+  /// **'No calendar connected'**
+  String get calendarNotConfigured;
+
+  /// No description provided for @calendarConfigured.
+  ///
+  /// In en, this message translates to:
+  /// **'Calendar URL saved'**
+  String get calendarConfigured;
+
+  /// No description provided for @calendarRefresh.
+  ///
+  /// In en, this message translates to:
+  /// **'Refresh now'**
+  String get calendarRefresh;
+
+  /// No description provided for @calendarLoading.
+  ///
+  /// In en, this message translates to:
+  /// **'Loading calendar…'**
+  String get calendarLoading;
+
+  /// No description provided for @calendarLoadFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not refresh. Check the iCal URL and your connection.'**
+  String get calendarLoadFailed;
+
+  /// No description provided for @calendarUpdated.
+  ///
+  /// In en, this message translates to:
+  /// **'Calendar is up to date'**
+  String get calendarUpdated;
+
+  /// No description provided for @calendarCached.
+  ///
+  /// In en, this message translates to:
+  /// **'Last saved calendar'**
+  String get calendarCached;
+
+  /// No description provided for @calendarRemove.
+  ///
+  /// In en, this message translates to:
+  /// **'Disconnect calendar'**
+  String get calendarRemove;
+
+  /// No description provided for @calendarAllDay.
+  ///
+  /// In en, this message translates to:
+  /// **'All day'**
+  String get calendarAllDay;
+
+  /// No description provided for @calendarUntitled.
+  ///
+  /// In en, this message translates to:
+  /// **'Untitled event'**
+  String get calendarUntitled;
+
+  /// No description provided for @calendarNoEvents.
+  ///
+  /// In en, this message translates to:
+  /// **'No upcoming events in the next 7 days.'**
+  String get calendarNoEvents;
+
+  /// No description provided for @calendarInvalidUrl.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter a valid HTTPS iCal URL.'**
+  String get calendarInvalidUrl;
+
+  /// No description provided for @calendarHelp.
+  ///
+  /// In en, this message translates to:
+  /// **'Shows your next three events over seven days. Refreshes every 15 minutes. Use Google Calendar’s secret iCal address, not a calendar webpage. Keep the URL private.'**
+  String get calendarHelp;
+
+  /// No description provided for @calendarCancel.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel'**
+  String get calendarCancel;
 }
 
 class _AppLocalizationsDelegate

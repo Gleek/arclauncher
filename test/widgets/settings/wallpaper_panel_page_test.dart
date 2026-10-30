@@ -24,10 +24,37 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../mocks.mocks.dart';
 
 void main() {
+  testWidgets("wallpaper credits toggle persists across settings instances", (tester) async {
+    SharedPreferences.setMockInitialValues({});
+    final preferences = await SharedPreferences.getInstance();
+    final settings = SettingsService(preferences);
+
+    await tester.pumpWidget(
+      ChangeNotifierProvider<SettingsService>.value(
+        value: settings,
+        child: const MaterialApp(
+          localizationsDelegates: AppLocalizations.localizationsDelegates,
+          supportedLocales: AppLocalizations.supportedLocales,
+          home: Scaffold(body: WallpaperPanelPage()),
+        ),
+      ),
+    );
+    final toggle = find.text('Show wallpaper credits');
+    await tester.ensureVisible(toggle);
+    await tester.tap(toggle);
+    await tester.pumpAndSettle();
+
+    expect(SettingsService(preferences).showWallpaperCredits, isFalse);
+    await tester.tap(toggle);
+    await tester.pumpAndSettle();
+    expect(SettingsService(preferences).showWallpaperCredits, isTrue);
+  });
+
   testWidgets("renders Unsplash slideshow tile below wallpaper options", (tester) async {
     final settingsService = MockSettingsService();
     final wallpaperService = MockWallpaperService();

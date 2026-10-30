@@ -33,6 +33,7 @@ import 'package:flauncher/widgets/app_card.dart';
 import 'package:flauncher/widgets/cached_blur_backdrop.dart';
 import 'package:flauncher/widgets/category_clean_row.dart';
 import 'package:flauncher/widgets/category_row.dart';
+import 'package:flauncher/widgets/calendar_panel.dart';
 import 'package:flauncher/widgets/dock_contour_painter.dart';
 import 'package:flauncher/widgets/launcher_alternative_view.dart';
 import 'package:flauncher/widgets/focus_aware_app_bar.dart';
@@ -101,8 +102,8 @@ class _FLauncherState extends State<FLauncher> with WidgetsBindingObserver {
           RepaintBoundary(
             child: Consumer3<WallpaperService, SettingsService, WatchNextService>(
               builder: (_, wallpaperService, settingsService, watchNextService, __) {
-                final author = wallpaperService.slideshowAuthor;
-                final redditCredit = wallpaperService.redditWallpaperCredit;
+                final author = settingsService.showWallpaperCredits ? wallpaperService.slideshowAuthor : null;
+                final redditCredit = settingsService.showWallpaperCredits ? wallpaperService.redditWallpaperCredit : null;
                 final isBigPicture = settingsService.showWatchNextSection && settingsService.watchNextBigPictureMode;
                 final activeItem = isBigPicture ? watchNextService.activeHeroItem : null;
                 final heroUri = isBigPicture ? watchNextService.getPosterUriForItem(activeItem) : null;
@@ -278,22 +279,25 @@ class _FLauncherState extends State<FLauncher> with WidgetsBindingObserver {
     final watchNextBigPicture = context.select<SettingsService, bool>((s) => s.watchNextBigPictureMode);
     final watchNextVisible = context.select<WatchNextService, bool>((s) => s.hasVisibleSection);
     final reserveWatchNextSpace = showWatchNextSection && watchNextVisible;
+    final showCalendar = context.select<SettingsService, bool>((s) => s.calendarEnabled && s.calendarUrl.isNotEmpty);
 
-    if (favoriteApps.isEmpty && otherSections.isEmpty) return _emptyState(context);
+    if (favoriteApps.isEmpty && otherSections.isEmpty && !showCalendar) return _emptyState(context);
 
     final watchNextSpace = watchNextBigPicture ? 385 : 410;
 
     return CustomScrollView(
       controller: _scrollController,
       slivers: [
+        if (showCalendar) const SliverToBoxAdapter(child: CalendarPanel()),
         if (favoriteApps.isNotEmpty || showWatchNextSection) ...[
           SliverToBoxAdapter(
             child: SizedBox(
               height:
-                  MediaQuery.of(context).size.height -
+                  (MediaQuery.of(context).size.height -
                   MediaQuery.of(context).padding.top -
                   kToolbarHeight -
-                  (reserveWatchNextSpace ? watchNextSpace : 150),
+                  (reserveWatchNextSpace ? watchNextSpace : 150) -
+                  (showCalendar ? CalendarPanel.height : 0)).clamp(0.0, double.infinity),
             ),
           ),
           if (showWatchNextSection)

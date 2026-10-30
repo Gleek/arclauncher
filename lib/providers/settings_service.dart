@@ -363,6 +363,26 @@ class SettingsService extends ChangeNotifier {
 
   Future<void> setUnsplashAuthor(String author) => _sharedPreferences.setString("unsplash_author", author);
 
+  bool get showWallpaperCredits => _sharedPreferences.getBool("show_wallpaper_credits") ?? true;
+
+  Future<void> setShowWallpaperCredits(bool enabled) async {
+    await _sharedPreferences.setBool("show_wallpaper_credits", enabled);
+    notifyListeners();
+  }
+
+  bool get calendarEnabled => _sharedPreferences.getBool('calendar_enabled') ?? false;
+  String get calendarUrl => _sharedPreferences.getString('calendar_url') ?? '';
+
+  Future<void> setCalendarEnabled(bool enabled) async {
+    await _sharedPreferences.setBool('calendar_enabled', enabled);
+    notifyListeners();
+  }
+
+  Future<void> setCalendarUrl(String url) async {
+    await _sharedPreferences.setString('calendar_url', url.trim());
+    notifyListeners();
+  }
+
   // Reddit Wallpaper Settings
 
   bool get redditWallpaperEnabled => _sharedPreferences.getBool("reddit_wallpaper_enabled") ?? false;

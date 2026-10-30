@@ -53,6 +53,7 @@ android {
         }
         github {
             dimension "store"
+            applicationIdSuffix ".custom"
         }
     }
 

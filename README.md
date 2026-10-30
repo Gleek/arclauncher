@@ -1,5 +1,30 @@
 # Arc Launcher
 
+## Personal TV fork
+
+This fork is based on upstream Arc Launcher 1.2.0 and adds:
+
+- **Settings → Interface → Calendar:** an optional Home row showing the next three
+  events over seven days from an HTTPS iCal URL. It refreshes every 15 minutes,
+  caches the last successful feed privately on the device, and supports recurring,
+  rescheduled, cancelled, and all-day events. Google Calendar's secret iCal address
+  works here; a calendar webpage URL does not. The URL is masked in settings.
+- **Settings → Interface → Wallpaper → Show wallpaper credits.**
+- **Settings → System → Date and time format → Fri 30 Oct.**
+
+The GitHub build uses `com.omeda.arc.custom`, so it can coexist with the official
+app. Updating this custom app with the same signing key and `adb install -r`
+preserves its settings. Keep your signing key private and backed up; it is not in
+this repository. Calendar URLs and event data must never be committed here.
+
+Build with Flutter 3.41.9 using `flutter build apk --release --flavor github
+--target-platform android-arm`. Configure signing through the existing
+`android/local.properties` fields (`storeFile`, `storePassword`, `keyAlias`,
+`keyPassword`) or the upstream signing environment variables.
+
+Local build logs, TV setup files, and APK downloads belong in `.local-work/`, which
+is ignored by Git. The remainder of this README is the upstream documentation.
+
 <picture>
   <img alt="Arc Launcher Preview" src="docs/images/home.webp">
 </picture>

@@ -52,6 +52,23 @@ void main() {
     binding.platformDispatcher.textScaleFactorTestValue = 0.8;
   });
 
+  testWidgets("wallpaper credits disappear when disabled", (tester) async {
+    final apps = mkAppService();
+    when(apps.categoriesWithApps).thenReturn([]);
+    final wallpaper = mkWallpaperService();
+    when(wallpaper.redditWallpaperCredit).thenReturn('r/wallpapers • u/photographer');
+    final settings = mkSettingsService();
+    when(settings.showWallpaperCredits).thenReturn(true);
+
+    await _pumpWidgetWithProviders(tester, wallpaper, apps, settings);
+    expect(find.text('r/wallpapers • u/photographer'), findsOneWidget);
+
+    when(settings.showWallpaperCredits).thenReturn(false);
+    await tester.pumpWidget(const SizedBox.shrink());
+    await _pumpWidgetWithProviders(tester, wallpaper, apps, settings);
+    expect(find.text('r/wallpapers • u/photographer'), findsNothing);
+  });
+
   testWidgets("Home page shows categories with apps", (tester) async {
     final appsService = mkAppService();
     final favoritesCategory = fakeCategory(name: "Favorites", order: 0, type: CategoryType.row);

@@ -114,6 +114,14 @@ class WallpaperPanelPage extends StatelessWidget {
                   }
                 },
               ),
+              Consumer<SettingsService>(
+                builder: (_, settings, __) => RoundedSwitchListTile(
+                  title: Text(localizations.showWallpaperCredits),
+                  secondary: const Icon(Icons.info_outline),
+                  value: settings.showWallpaperCredits,
+                  onChanged: settings.setShowWallpaperCredits,
+                ),
+              ),
               FocusableSettingsTile(
                 leading: const Icon(Icons.slideshow),
                 title: Text(localizations.unsplashSlideshow),
