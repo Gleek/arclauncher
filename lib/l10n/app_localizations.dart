@@ -1584,12 +1584,6 @@ abstract class AppLocalizations {
   /// **'Disconnect calendar'**
   String get calendarRemove;
 
-  /// No description provided for @calendarAllDay.
-  ///
-  /// In en, this message translates to:
-  /// **'All day'**
-  String get calendarAllDay;
-
   /// No description provided for @calendarUntitled.
   ///
   /// In en, this message translates to:
@@ -1605,7 +1599,7 @@ abstract class AppLocalizations {
   /// No description provided for @calendarHelp.
   ///
   /// In en, this message translates to:
-  /// **'Shows the next seven days on Home. Select a day to see all its events. Refreshes every 15 minutes. Use Google Calendar’s secret iCal address and keep it private.'**
+  /// **'Shows the next seven days on Home without taking remote focus. Refreshes every 15 minutes. Use Google Calendar’s secret iCal address and keep it private.'**
   String get calendarHelp;
 
   /// No description provided for @calendarCancel.
@@ -1625,12 +1619,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Continues'**
   String get calendarContinues;
-
-  /// No description provided for @calendarClose.
-  ///
-  /// In en, this message translates to:
-  /// **'Close'**
-  String get calendarClose;
 }
 
 class _AppLocalizationsDelegate

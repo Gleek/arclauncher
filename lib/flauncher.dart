@@ -288,7 +288,7 @@ class _FLauncherState extends State<FLauncher> with WidgetsBindingObserver {
     return CustomScrollView(
       controller: _scrollController,
       slivers: [
-        if (showCalendar) SliverToBoxAdapter(child: CalendarPanel(onFocused: _onHomeSectionFocused)),
+        if (showCalendar) const SliverToBoxAdapter(child: CalendarPanel()),
         if (favoriteApps.isNotEmpty || showWatchNextSection) ...[
           SliverToBoxAdapter(
             child: SizedBox(
@@ -321,7 +321,7 @@ class _FLauncherState extends State<FLauncher> with WidgetsBindingObserver {
                     favoritesCategory!,
                     favoriteApps,
                     appsService,
-                    handleUpNavigationToSettings: !reserveWatchNextSpace && !showCalendar,
+                    handleUpNavigationToSettings: !reserveWatchNextSpace,
                   ),
                 ),
               ),
@@ -329,7 +329,7 @@ class _FLauncherState extends State<FLauncher> with WidgetsBindingObserver {
         ],
         ..._buildSectionSlivers(
           otherSections,
-          firstCategoryAlreadyFound: favoriteApps.isNotEmpty || showCalendar,
+          firstCategoryAlreadyFound: favoriteApps.isNotEmpty,
           showAppNames: showAppNames,
           onFirstSectionFocused: favoriteApps.isNotEmpty ? _scrollDockToTop : null,
         ),

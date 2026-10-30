@@ -11,83 +11,97 @@ import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
-  testWidgets(
-    'week fits seven days and opens the complete agenda for a busy day',
-    (tester) async {
-      tester.view.physicalSize = const Size(1920, 1080);
-      tester.view.devicePixelRatio = 2;
-      addTearDown(tester.view.resetPhysicalSize);
-      addTearDown(tester.view.resetDevicePixelRatio);
-      SharedPreferences.setMockInitialValues({});
-      final settings = SettingsService(await SharedPreferences.getInstance());
-      final calendar = CalendarService(settings);
-      final now = DateTime.now();
-      final tomorrow = DateTime(now.year, now.month, now.day + 1, 9);
-      final holiday = DateTime(tomorrow.year, tomorrow.month, tomorrow.day);
-      calendar.events = [
+  testWidgets('compact week is display-only and leaves remote focus on apps', (
+    tester,
+  ) async {
+    tester.view.physicalSize = const Size(1920, 1080);
+    tester.view.devicePixelRatio = 2;
+    addTearDown(tester.view.resetPhysicalSize);
+    addTearDown(tester.view.resetDevicePixelRatio);
+    SharedPreferences.setMockInitialValues({});
+    final settings = SettingsService(await SharedPreferences.getInstance());
+    final calendar = CalendarService(settings);
+    final now = DateTime.now();
+    final tomorrow = DateTime(now.year, now.month, now.day + 1, 9);
+    final holiday = DateTime(tomorrow.year, tomorrow.month, tomorrow.day);
+    calendar.events = [
+      CalendarEvent(
+        'School meeting with a very long title that must truncate gracefully',
+        tomorrow,
+        tomorrow.add(const Duration(hours: 1)),
+        false,
+      ),
+      CalendarEvent(
+        'Family holiday',
+        holiday,
+        DateTime(holiday.year, holiday.month, holiday.day + 1),
+        true,
+      ),
+      CalendarEvent(
+        'Dinner',
+        tomorrow,
+        tomorrow.add(const Duration(hours: 1)),
+        false,
+      ),
+      for (var i = 4; i <= 8; i++)
         CalendarEvent(
-          'School meeting with a very long title that must truncate gracefully',
-          tomorrow,
-          tomorrow.add(const Duration(hours: 1)),
+          'Event $i',
+          tomorrow.add(Duration(hours: i)),
+          tomorrow.add(Duration(hours: i + 1)),
           false,
         ),
-        CalendarEvent(
-          'Family holiday',
-          holiday,
-          DateTime(holiday.year, holiday.month, holiday.day + 1),
-          true,
+    ];
+    var launches = 0;
+    await tester.pumpWidget(
+      _app(
+        settings,
+        calendar,
+        Column(
+          children: [
+            const CalendarPanel(),
+            TextButton(
+              autofocus: true,
+              onPressed: () => launches++,
+              child: const Text('App shortcut'),
+            ),
+          ],
         ),
-        CalendarEvent(
-          'Dinner',
-          tomorrow,
-          tomorrow.add(const Duration(hours: 1)),
-          false,
-        ),
-        for (var i = 4; i <= 8; i++)
-          CalendarEvent(
-            'Event $i',
-            tomorrow.add(Duration(hours: i)),
-            tomorrow.add(Duration(hours: i + 1)),
-            false,
-          ),
-      ];
-      await tester.pumpWidget(_app(settings, calendar, const CalendarPanel()));
-      await tester.pumpAndSettle();
-      expect(find.text('Family holiday'), findsOneWidget);
-      for (var i = 0; i < 7; i++) {
-        expect(find.byKey(ValueKey('calendar-day-$i')), findsOneWidget);
-      }
-      expect(find.text('+1'), findsOneWidget);
-      expect(find.text('Event 8'), findsNothing);
-      expect(tester.takeException(), isNull);
-      await tester.sendKeyEvent(LogicalKeyboardKey.arrowRight);
-      await tester.sendKeyEvent(LogicalKeyboardKey.enter);
-      await tester.pumpAndSettle();
-      expect(find.textContaining('All day'), findsOneWidget);
-      for (var i = 0; i < 7; i++) {
-        await tester.sendKeyEvent(LogicalKeyboardKey.arrowDown);
-        await tester.pumpAndSettle();
-      }
-      expect(find.text('Event 8'), findsOneWidget);
-      final viewport = tester.getRect(
-        find.descendant(
-          of: find.byType(AlertDialog),
-          matching: find.byType(SingleChildScrollView),
-        ),
-      );
-      expect(
-        tester.getCenter(find.text('Event 8')).dy,
-        lessThanOrEqualTo(viewport.bottom),
-      );
-      expect(
-        tester.getCenter(find.text('Event 8')).dy,
-        greaterThanOrEqualTo(viewport.top),
-      );
-      expect(tester.takeException(), isNull);
-      await tester.pumpWidget(const SizedBox.shrink());
-      calendar.dispose();
-    },
-  );
+      ),
+    );
+    await tester.pumpAndSettle();
+    expect(find.text('Family holiday'), findsOneWidget);
+    for (var i = 0; i < 7; i++) {
+      expect(find.byKey(ValueKey('calendar-day-$i')), findsOneWidget);
+    }
+    expect(find.text('+4'), findsOneWidget);
+    expect(find.text('Event 8'), findsNothing);
+    expect(tester.takeException(), isNull);
+    expect(
+      tester.getSize(find.byType(CalendarPanel)).height,
+      lessThanOrEqualTo(240),
+    );
+    expect(
+      find.descendant(
+        of: find.byType(CalendarPanel),
+        matching: find.byType(Focus),
+      ),
+      findsNothing,
+    );
+    await tester.sendKeyEvent(LogicalKeyboardKey.arrowUp);
+    await tester.sendKeyEvent(LogicalKeyboardKey.enter);
+    await tester.pumpAndSettle();
+    expect(launches, 1);
+    await tester.tap(
+      find.byKey(const ValueKey('calendar-day-1')),
+      warnIfMissed: false,
+    );
+    await tester.pumpAndSettle();
+    expect(find.byType(AlertDialog), findsNothing);
+    expect(launches, 1);
+    expect(tester.takeException(), isNull);
+    await tester.pumpWidget(const SizedBox.shrink());
+    calendar.dispose();
+  });
 
   testWidgets('settings mask the URL and can disconnect the calendar', (
     tester,

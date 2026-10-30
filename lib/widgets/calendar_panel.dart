@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 
@@ -7,13 +6,11 @@ import '../l10n/app_localizations.dart';
 import '../models/calendar_event.dart';
 import '../providers/calendar_service.dart';
 import '../providers/settings_service.dart';
-import 'settings/settings_theme.dart';
 
 class CalendarPanel extends StatelessWidget {
-  static const double height = 320;
-  final VoidCallback? onFocused;
+  static const double height = 220;
 
-  const CalendarPanel({super.key, this.onFocused});
+  const CalendarPanel({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -122,25 +119,10 @@ class CalendarPanel extends StatelessWidget {
                               : BorderSide.none,
                         ),
                       ),
-                      child: SettingsFocusCard(
+                      child: Padding(
                         key: ValueKey('calendar-day-$index'),
-                        autofocus: index == 0,
-                        margin: EdgeInsets.zero,
                         padding: const EdgeInsets.all(7),
-                        radius: 0,
-                        onPressed: () =>
-                            _showDay(context, day, items, timeFormat),
-                        onFocusChange: (focused) {
-                          if (focused) {
-                            onFocused?.call();
-                            Scrollable.ensureVisible(
-                              context,
-                              alignment: 0,
-                              duration: const Duration(milliseconds: 200),
-                            );
-                          }
-                        },
-                        builder: (context, highlighted) => Column(
+                        child: Column(
                           crossAxisAlignment: CrossAxisAlignment.stretch,
                           children: [
                             Row(
@@ -182,7 +164,7 @@ class CalendarPanel extends StatelessWidget {
                                 ),
                               ],
                             ),
-                            const SizedBox(height: 8),
+                            const SizedBox(height: 6),
                             if (items.isEmpty)
                               Text(
                                 strings.calendarDayEmpty,
@@ -191,13 +173,14 @@ class CalendarPanel extends StatelessWidget {
                                   color: Colors.white38,
                                 ),
                               ),
-                            for (final event in items.take(7))
+                            for (final event in items.take(4))
                               _eventBar(context, event, day, timeFormat),
-                            if (items.length > 7)
+                            if (items.length > 4)
                               Text(
-                                '+${items.length - 7}',
+                                '+${items.length - 4}',
                                 style: const TextStyle(
                                   fontSize: 11,
+                                  height: 1.1,
                                   color: Colors.white70,
                                 ),
                               ),
@@ -224,7 +207,7 @@ class CalendarPanel extends StatelessWidget {
     final strings = AppLocalizations.of(context)!;
     final title = event.title.isEmpty ? strings.calendarUntitled : event.title;
     return Container(
-      height: 22,
+      height: 20,
       margin: const EdgeInsets.only(bottom: 2),
       padding: event.allDay
           ? const EdgeInsets.symmetric(horizontal: 4)
@@ -281,90 +264,10 @@ class CalendarPanel extends StatelessWidget {
     String format,
   ) {
     final strings = AppLocalizations.of(context)!;
-    if (event.allDay) return strings.calendarAllDay;
     if (event.start.isBefore(day)) return strings.calendarContinues;
     return DateFormat(
       format,
       Localizations.localeOf(context).toLanguageTag(),
     ).format(event.start);
-  }
-
-  void _showDay(
-    BuildContext context,
-    DateTime day,
-    List<CalendarEvent> events,
-    String format,
-  ) {
-    final strings = AppLocalizations.of(context)!;
-    final locale = Localizations.localeOf(context).toLanguageTag();
-    showDialog<void>(
-      context: context,
-      builder: (context) => Shortcuts(
-        shortcuts: const {
-          SingleActivator(LogicalKeyboardKey.arrowDown): NextFocusIntent(),
-          SingleActivator(LogicalKeyboardKey.arrowUp): PreviousFocusIntent(),
-        },
-        child: FocusTraversalGroup(
-          policy: WidgetOrderTraversalPolicy(),
-          child: AlertDialog(
-            title: Text(DateFormat('EEEE d MMMM', locale).format(day)),
-            content: SizedBox(
-              width: 500,
-              height: MediaQuery.sizeOf(context).height * 0.55,
-              child: events.isEmpty
-                  ? Text(strings.calendarDayEmpty)
-                  : SingleChildScrollView(
-                      child: Column(
-                        children: List.generate(events.length, (index) {
-                          final event = events[index];
-                          return Builder(
-                            builder: (itemContext) => SettingsFocusCard(
-                              autofocus: index == 0,
-                              onFocusChange: (focused) {
-                                if (focused)
-                                  Scrollable.ensureVisible(
-                                    itemContext,
-                                    duration: const Duration(milliseconds: 200),
-                                  );
-                              },
-                              builder: (context, highlighted) => Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    event.title.isEmpty
-                                        ? strings.calendarUntitled
-                                        : event.title,
-                                    style: const TextStyle(
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.w600,
-                                    ),
-                                  ),
-                                  const SizedBox(height: 4),
-                                  Text(
-                                    event.allDay
-                                        ? strings.calendarAllDay
-                                        : '${_time(context, event, day, format)} – ${DateFormat(format, locale).format(event.end)}',
-                                    style: const TextStyle(
-                                      color: Colors.white70,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          );
-                        }),
-                      ),
-                    ),
-            ),
-            actions: [
-              TextButton(
-                onPressed: () => Navigator.pop(context),
-                child: Text(strings.calendarClose),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
   }
 }

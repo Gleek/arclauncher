@@ -812,9 +812,6 @@ class AppLocalizationsEs extends AppLocalizations {
   String get calendarRemove => 'Disconnect calendar';
 
   @override
-  String get calendarAllDay => 'All day';
-
-  @override
   String get calendarUntitled => 'Untitled event';
 
   @override
@@ -822,7 +819,7 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get calendarHelp =>
-      'Shows the next seven days on Home. Select a day to see all its events. Refreshes every 15 minutes. Use Google Calendar’s secret iCal address and keep it private.';
+      'Shows the next seven days on Home without taking remote focus. Refreshes every 15 minutes. Use Google Calendar’s secret iCal address and keep it private.';
 
   @override
   String get calendarCancel => 'Cancel';
@@ -832,7 +829,4 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get calendarContinues => 'Continues';
-
-  @override
-  String get calendarClose => 'Close';
 }
