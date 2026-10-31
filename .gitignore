@@ -102,3 +102,7 @@ android/fastlane/README.md
 
 # Local build logs, APK downloads and TV setup files
 .local-work/
+
+# Local authenticated curl requests and downloaded collection pages
+/curl-pexels.sh
+/pixabay-out.html
