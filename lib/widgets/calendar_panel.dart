@@ -40,7 +40,7 @@ class CalendarPanel extends StatelessWidget {
         margin: const EdgeInsets.fromLTRB(40, 8, 40, 8),
         padding: const EdgeInsets.all(12),
         decoration: BoxDecoration(
-          color: Colors.black.withValues(alpha: 0.6),
+          color: Colors.black.withValues(alpha: 0.55),
           borderRadius: BorderRadius.circular(18),
           border: Border.all(color: Colors.white12),
         ),
