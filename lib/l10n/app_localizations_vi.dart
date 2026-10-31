@@ -776,6 +776,12 @@ class AppLocalizationsVi extends AppLocalizations {
   String get showWallpaperCredits => 'Hiển thị nguồn hình nền';
 
   @override
+  String get panels => 'Bảng tiện ích';
+
+  @override
+  String get showDailyAyah => 'Hiển thị câu Kinh Qur’an trong ngày';
+
+  @override
   String get calendar => 'Calendar';
 
   @override

@@ -28,8 +28,10 @@ import 'package:flauncher/providers/settings_service.dart';
 import 'package:flauncher/providers/wallpaper_service.dart';
 import 'package:flauncher/providers/watch_next_service.dart';
 import 'package:flauncher/widgets/application_info_panel.dart';
+import 'package:flauncher/widgets/app_card.dart';
 import 'package:flauncher/widgets/apps_grid.dart';
 import 'package:flauncher/widgets/category_row.dart';
+import 'package:flauncher/widgets/daily_ayah_panel.dart';
 import 'package:flauncher/widgets/settings/settings_panel.dart';
 import 'package:flauncher/widgets/settings/settings_panel_page.dart';
 import 'package:flutter/material.dart';
@@ -100,14 +102,25 @@ void main() {
     expect(findAppCard("me.efesser.flauncher.1"), findsOneWidget);
   });
 
-  testWidgets("Home page shows category empty-state", (tester) async {
+  testWidgets("Home page shows daily ayah without app categories", (tester) async {
     final appsService = mkAppService();
     when(appsService.categoriesWithApps).thenReturn([]);
 
     await _pumpWidgetWith(tester, appsService);
 
-    expect(find.byType(CircularProgressIndicator), findsOneWidget);
-    expect(find.text("Loading"), findsOneWidget);
+    expect(find.byType(DailyAyahPanel), findsOneWidget);
+    expect(find.text("AYAH OF THE DAY"), findsOneWidget);
+  });
+
+  testWidgets('Home hides the daily ayah when disabled in Interface settings', (tester) async {
+    final apps = mkAppService();
+    when(apps.categoriesWithApps).thenReturn([
+      CategoryWithApps(fakeCategory(name: 'Applications', order: 0), [fakeApp(packageName: 'test.app', name: 'Test', version: '1.0')]),
+    ]);
+    final settings = mkSettingsService();
+    when(settings.showDailyAyah).thenReturn(false);
+    await _pumpWidgetWithProviders(tester, mkWallpaperService(), apps, settings);
+    expect(find.byType(DailyAyahPanel), findsNothing);
   });
 
   testWidgets("Home page displays background image", (tester) async {
@@ -310,6 +323,7 @@ void main() {
     await tester.sendKeyEvent(LogicalKeyboardKey.arrowRight);
     await tester.sendKeyEvent(LogicalKeyboardKey.arrowDown);
     await tester.pump();
+    await tester.pump(const Duration(milliseconds: 300));
 
     // then
     expect(isAppCardFocused(tester, "me.efesser.tv1"), isFalse);
@@ -317,13 +331,16 @@ void main() {
 
     await tester.sendKeyEvent(LogicalKeyboardKey.arrowDown);
     await tester.pump();
+    await tester.pump(const Duration(milliseconds: 300));
     expect(isAppCardFocused(tester, "me.efesser.tv1"), isFalse);
     expect(isAppCardFocused(tester, "me.efesser.music2"), isFalse);
-    expect(isAppCardFocused(tester, "me.efesser.game2"), isTrue);
+    expect(FocusManager.instance.primaryFocus?.context?.findAncestorWidgetOfExactType<AppCard>()?.application.packageName,
+      "me.efesser.game2");
 
     await tester.sendKeyEvent(LogicalKeyboardKey.arrowRight);
     await tester.sendKeyEvent(LogicalKeyboardKey.arrowUp);
     await tester.pump();
+    await tester.pump(const Duration(milliseconds: 300));
     expect(isAppCardFocused(tester, "me.efesser.tv1"), isFalse);
     expect(isAppCardFocused(tester, "me.efesser.music2"), isTrue);
     expect(isAppCardFocused(tester, "me.efesser.game2"), isFalse);
@@ -425,7 +442,7 @@ void main() {
     expect(isAppCardFocused(tester, "me.efesser.music1"), isTrue);
   });
 
-  testWidgets("Moving right or up can go the settings icon", (tester) async {
+  testWidgets("Moving up visits the daily ayah before settings", (tester) async {
     // given
     final appsService = mkAppService();
 
@@ -474,12 +491,21 @@ void main() {
     await tester.sendKeyEvent(LogicalKeyboardKey.arrowUp);
     await tester.pump();
     expect(isAppCardFocused(tester, "me.efesser.tv1"), isFalse);
+    expect(isSettingsIconFocused(tester), isFalse);
+    expect(Focus.of(tester.element(find.text('AYAH OF THE DAY'))).hasFocus, isTrue);
+
+    await tester.sendKeyEvent(LogicalKeyboardKey.arrowUp);
+    await tester.pumpAndSettle();
     expect(isSettingsIconFocused(tester), isTrue);
+
+    await tester.sendKeyEvent(LogicalKeyboardKey.arrowDown);
+    await tester.pumpAndSettle();
+    expect(Focus.of(tester.element(find.text('AYAH OF THE DAY'))).hasFocus, isTrue);
 
     await tester.sendKeyEvent(LogicalKeyboardKey.arrowDown);
     await tester.pump();
     expect(isSettingsIconFocused(tester), isFalse);
-    expect(isAppCardFocused(tester, "me.efesser.tv1"), isTrue);
+    expect(isAppCardFocused(tester, "me.efesser.tv1") || isAppCardFocused(tester, "me.efesser.tv2"), isTrue);
   });
 }
 
@@ -491,6 +517,7 @@ SettingsService mkSettingsService() {
   when(settingsService.showAppNamesBelowIcons).thenReturn(true);
   when(settingsService.backgroundBlurDisabled).thenReturn(false);
   when(settingsService.showWatchNextSection).thenReturn(false);
+  when(settingsService.showDailyAyah).thenReturn(true);
   when(settingsService.watchNextBigPictureMode).thenReturn(false);
   when(settingsService.watchNextHideProgramsWithoutImages).thenReturn(false);
   when(settingsService.watchNextMaxItems).thenReturn(0);
@@ -572,6 +599,8 @@ Future<void> _pumpWidgetWithProviders(
     when(appsService.launcherSections).thenReturn(cwa);
   } catch (_) {}
 
+  await tester.runAsync(() => rootBundle.loadString('assets/daily_ayahs.json'));
+  addTearDown(() => tester.pumpWidget(const SizedBox.shrink()));
   await tester.pumpWidget(
     MultiProvider(
       providers: [
@@ -589,5 +618,6 @@ Future<void> _pumpWidgetWithProviders(
       ),
     ),
   );
-  await tester.pump(Duration(seconds: 30), EnginePhase.sendSemanticsUpdate);
+  await tester.runAsync(() async => Future<void>.delayed(const Duration(milliseconds: 100)));
+  await tester.pumpAndSettle();
 }

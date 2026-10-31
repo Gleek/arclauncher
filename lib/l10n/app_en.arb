@@ -355,6 +355,8 @@
       }
     },
     "showWallpaperCredits": "Show wallpaper credits",
+    "panels": "Panels",
+    "showDailyAyah": "Show ayah of the day",
     "calendar": "Calendar",
     "calendarShow": "Show calendar on Home",
     "calendarUrl": "iCal URL",

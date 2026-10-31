@@ -45,6 +45,7 @@ const String _screensaverClockStyle = "screensaver_clock_style";
 const String _dockBackdropFilterDisabled = "dock_backdrop_filter_disabled";
 const String _backgroundBlurDisabled = "background_blur_disabled";
 const String _showWatchNextSection = "show_watch_next_section";
+const String _showDailyAyah = "show_daily_ayah";
 const String _watchNextBigPictureMode = "watch_next_big_picture_mode";
 const String _watchNextHideProgramsWithoutImages = "watch_next_hide_programs_without_images";
 const String _watchNextMaxItems = "watch_next_max_items";
@@ -134,6 +135,10 @@ class SettingsService extends ChangeNotifier {
   bool get dockBackdropFilterDisabled => _sharedPreferences.getBool(_dockBackdropFilterDisabled) ?? false;
 
   bool get backgroundBlurDisabled => _sharedPreferences.getBool(_backgroundBlurDisabled) ?? false;
+
+  bool get showDailyAyah => _sharedPreferences.getBool(_showDailyAyah) ?? true;
+
+  Future<void> setShowDailyAyah(bool value) => set(_showDailyAyah, value);
 
   bool get showWatchNextSection => _sharedPreferences.getBool(_showWatchNextSection) ?? false;
 

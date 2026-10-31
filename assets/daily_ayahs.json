@@ -1,0 +1,1732 @@
+{
+  "schemaVersion": 1,
+  "language": "en",
+  "description": "100 short Quran ayahs for daily reflection, selected for full display on the launcher. Excludes Al-Fatihah and the final ten surahs (105–114). Independent of Quran.com’s daily schedule.",
+  "sources": {
+    "arabic": {
+      "name": "Tanzil Quran Text (Uthmani, Version 1.1)",
+      "url": "https://tanzil.net",
+      "downloadUrl": "https://tanzil.net/pub/download/index.php?quranType=uthmani&outType=txt-2&agree=true",
+      "licenseUrl": "https://tanzil.net/docs/text_license",
+      "copyrightNotice": "# PLEASE DO NOT REMOVE OR CHANGE THIS COPYRIGHT BLOCK\n#====================================================================\n#\n#  Tanzil Quran Text (Uthmani, Version 1.1)\n#  Copyright (C) 2007-2026 Tanzil Project\n#  License: Creative Commons Attribution 3.0\n#\n#  This copy of the Quran text is carefully produced, highly \n#  verified and continuously monitored by a group of specialists \n#  at Tanzil Project.\n#\n#  TERMS OF USE:\n#\n#  - Permission is granted to copy and distribute verbatim copies \n#    of this text, but CHANGING IT IS NOT ALLOWED.\n#\n#  - This Quran text can be used in any website or application, \n#    provided that its source (Tanzil Project) is clearly indicated, \n#    and a link is made to tanzil.net to enable users to keep\n#    track of changes.\n#\n#  - This copyright notice shall be included in all verbatim copies \n#    of the text, and shall be reproduced appropriately in all files \n#    derived from or containing substantial portion of this text.\n#\n#  Please check updates at: http://tanzil.net/updates/\n#\n#====================================================================\n"
+    },
+    "translation": {
+      "name": "The Clear Quran",
+      "translator": "Dr. Mustafa Khattab",
+      "url": "https://theclearquran.org",
+      "source": "User-provided quran-translation binary",
+      "sourceCommand": "~/junk/quran-translation <surah:ayah_start-ayah_end>",
+      "copyrightNotice": "© Copyright 2015, Dr. Mustafa Khattab. All rights reserved."
+    },
+    "retrievedOn": "2026-10-31",
+    "qcfV2": {
+      "name": "King Fahd Glorious Quran Printing Complex · QCF V2",
+      "glyphSource": "https://api.quran.com/api/v4/verses/by_key/{verse_key}?words=true&word_fields=code_v2",
+      "fontSource": "https://verses.quran.foundation/fonts/quran/hafs/v2/ttf/p{page}.ttf",
+      "credits": "King Fahd Glorious Quran Printing Complex; fonts hosted by Quran Foundation. Font files bundled without modification.",
+      "documentation": "https://qul.tarteel.ai/docs/glyph-based"
+    }
+  },
+  "passages": [
+    {
+      "reference": "2:21",
+      "surahName": "Al-Baqarah",
+      "verses": [
+        {
+          "verse": 21,
+          "arabic": "يَٰٓأَيُّهَا ٱلنَّاسُ ٱعْبُدُوا۟ رَبَّكُمُ ٱلَّذِى خَلَقَكُمْ وَٱلَّذِينَ مِن قَبْلِكُمْ لَعَلَّكُمْ تَتَّقُونَ",
+          "translation": "O humanity! Worship your Lord, Who created you and those before you, so that you may become mindful ˹of Him˺.",
+          "qcfV2": [
+            {
+              "page": 4,
+              "text": "ﲌ ﲍ ﲎ ﲏ ﲐ ﲑ ﲒ ﲓ ﲔ ﲕ ﲖ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "2:45",
+      "surahName": "Al-Baqarah",
+      "verses": [
+        {
+          "verse": 45,
+          "arabic": "وَٱسْتَعِينُوا۟ بِٱلصَّبْرِ وَٱلصَّلَوٰةِ وَإِنَّهَا لَكَبِيرَةٌ إِلَّا عَلَى ٱلْخَٰشِعِينَ",
+          "translation": "And seek help through patience and prayer. Indeed, it is a burden except for the humble—",
+          "qcfV2": [
+            {
+              "page": 7,
+              "text": "ﲠ ﲡ ﲢﲣ ﲤ ﲥ ﲦ ﲧ ﲨ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "2:152",
+      "surahName": "Al-Baqarah",
+      "verses": [
+        {
+          "verse": 152,
+          "arabic": "فَٱذْكُرُونِىٓ أَذْكُرْكُمْ وَٱشْكُرُوا۟ لِى وَلَا تَكْفُرُونِ",
+          "translation": "remember Me; I will remember you. And thank Me, and never be ungrateful.",
+          "qcfV2": [
+            {
+              "page": 23,
+              "text": "ﲷ ﲸ ﲹ ﲺ ﲻ ﲼ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "2:153",
+      "surahName": "Al-Baqarah",
+      "verses": [
+        {
+          "verse": 153,
+          "arabic": "يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوا۟ ٱسْتَعِينُوا۟ بِٱلصَّبْرِ وَٱلصَّلَوٰةِ إِنَّ ٱللَّهَ مَعَ ٱلصَّٰبِرِينَ",
+          "translation": "O believers! Seek comfort in patience and prayer. Allah is truly with those who are patient.",
+          "qcfV2": [
+            {
+              "page": 23,
+              "text": "ﲾ ﲿ ﳀ ﳁ ﳂ ﳃﳄ ﳅ ﳆ ﳇ ﳈ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "2:155",
+      "surahName": "Al-Baqarah",
+      "verses": [
+        {
+          "verse": 155,
+          "arabic": "وَلَنَبْلُوَنَّكُم بِشَىْءٍ مِّنَ ٱلْخَوْفِ وَٱلْجُوعِ وَنَقْصٍ مِّنَ ٱلْأَمْوَٰلِ وَٱلْأَنفُسِ وَٱلثَّمَرَٰتِ وَبَشِّرِ ٱلصَّٰبِرِينَ",
+          "translation": "We will certainly test you with a touch of fear and famine and loss of property, life, and crops. Give good news to those who patiently endure—",
+          "qcfV2": [
+            {
+              "page": 24,
+              "text": "ﱐ ﱑ ﱒ ﱓ ﱔ ﱕ ﱖ ﱗ ﱘ ﱙﱚ ﱛ ﱜ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "2:156",
+      "surahName": "Al-Baqarah",
+      "verses": [
+        {
+          "verse": 156,
+          "arabic": "ٱلَّذِينَ إِذَآ أَصَٰبَتْهُم مُّصِيبَةٌ قَالُوٓا۟ إِنَّا لِلَّهِ وَإِنَّآ إِلَيْهِ رَٰجِعُونَ",
+          "translation": "who, when faced with a disaster, say, “Surely to Allah we belong and to Him we will ˹all˺ return.”",
+          "qcfV2": [
+            {
+              "page": 24,
+              "text": "ﱞ ﱟ ﱠ ﱡ ﱢ ﱣ ﱤ ﱥ ﱦ ﱧ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "2:157",
+      "surahName": "Al-Baqarah",
+      "verses": [
+        {
+          "verse": 157,
+          "arabic": "أُو۟لَٰٓئِكَ عَلَيْهِمْ صَلَوَٰتٌ مِّن رَّبِّهِمْ وَرَحْمَةٌ وَأُو۟لَٰٓئِكَ هُمُ ٱلْمُهْتَدُونَ",
+          "translation": "They are the ones who will receive Allah’s blessings and mercy. And it is they who are ˹rightly˺ guided.",
+          "qcfV2": [
+            {
+              "page": 24,
+              "text": "ﱩ ﱪ ﱫ ﱬ ﱭ ﱮﱯ ﱰ ﱱ ﱲ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "2:163",
+      "surahName": "Al-Baqarah",
+      "verses": [
+        {
+          "verse": 163,
+          "arabic": "وَإِلَٰهُكُمْ إِلَٰهٌ وَٰحِدٌ لَّآ إِلَٰهَ إِلَّا هُوَ ٱلرَّحْمَٰنُ ٱلرَّحِيمُ",
+          "translation": "Your God is ˹only˺ One God. There is no god ˹worthy of worship˺ except Him—the Most Compassionate, Most Merciful.",
+          "qcfV2": [
+            {
+              "page": 24,
+              "text": "ﳉ ﳊ ﳋﳌ ﳍ ﳎ ﳏ ﳐ ﳑ ﳒ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "2:195",
+      "surahName": "Al-Baqarah",
+      "verses": [
+        {
+          "verse": 195,
+          "arabic": "وَأَنفِقُوا۟ فِى سَبِيلِ ٱللَّهِ وَلَا تُلْقُوا۟ بِأَيْدِيكُمْ إِلَى ٱلتَّهْلُكَةِ وَأَحْسِنُوٓا۟ إِنَّ ٱللَّهَ يُحِبُّ ٱلْمُحْسِنِينَ",
+          "translation": "Spend in the cause of Allah and do not let your own hands throw you into destruction ˹by withholding˺. And do good, for Allah certainly loves the good-doers.",
+          "qcfV2": [
+            {
+              "page": 30,
+              "text": "ﲐ ﲑ ﲒ ﲓ ﲔ ﲕ ﲖ ﲗ ﲘ ﲙﲚ ﲛ ﲜ ﲝ ﲞ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "2:201",
+      "surahName": "Al-Baqarah",
+      "verses": [
+        {
+          "verse": 201,
+          "arabic": "وَمِنْهُم مَّن يَقُولُ رَبَّنَآ ءَاتِنَا فِى ٱلدُّنْيَا حَسَنَةً وَفِى ٱلْـَٔاخِرَةِ حَسَنَةً وَقِنَا عَذَابَ ٱلنَّارِ",
+          "translation": "Yet there are others who say, “Our Lord! Grant us the good of this world and the Hereafter, and protect us from the torment of the Fire.”",
+          "qcfV2": [
+            {
+              "page": 31,
+              "text": "ﲨ ﲩ ﲪ ﲫ ﲬ ﲭ ﲮ ﲯ ﲰ ﲱ ﲲ ﲳ ﲴ ﲵ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "2:263",
+      "surahName": "Al-Baqarah",
+      "verses": [
+        {
+          "verse": 263,
+          "arabic": "قَوْلٌ مَّعْرُوفٌ وَمَغْفِرَةٌ خَيْرٌ مِّن صَدَقَةٍ يَتْبَعُهَآ أَذًى وَٱللَّهُ غَنِىٌّ حَلِيمٌ",
+          "translation": "Kind words and forgiveness are better than charity followed by injury. And Allah is Self-Sufficient, Most Forbearing.",
+          "qcfV2": [
+            {
+              "page": 44,
+              "text": "ﲡ ﲢ ﲣ ﲤ ﲥ ﲦ ﲧ ﲨ ﲩﲪ ﲫ ﲬ ﲭ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "3:8",
+      "surahName": "Ali 'Imran",
+      "verses": [
+        {
+          "verse": 8,
+          "arabic": "رَبَّنَا لَا تُزِغْ قُلُوبَنَا بَعْدَ إِذْ هَدَيْتَنَا وَهَبْ لَنَا مِن لَّدُنكَ رَحْمَةً إِنَّكَ أَنتَ ٱلْوَهَّابُ",
+          "translation": "˹They say,˺ “Our Lord! Do not let our hearts deviate after you have guided us. Grant us Your mercy. You are indeed the Giver ˹of all bounties˺.",
+          "qcfV2": [
+            {
+              "page": 50,
+              "text": "ﲺ ﲻ ﲼ ﲽ ﲾ ﲿ ﳀ ﳁ ﳂ ﳃ ﳄ ﳅﳆ ﳇ ﳈ ﳉ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "3:31",
+      "surahName": "Ali 'Imran",
+      "verses": [
+        {
+          "verse": 31,
+          "arabic": "قُلْ إِن كُنتُمْ تُحِبُّونَ ٱللَّهَ فَٱتَّبِعُونِى يُحْبِبْكُمُ ٱللَّهُ وَيَغْفِرْ لَكُمْ ذُنُوبَكُمْ وَٱللَّهُ غَفُورٌ رَّحِيمٌ",
+          "translation": "Say, ˹O Prophet,˺ “If you ˹sincerely˺ love Allah, then follow me; Allah will love you and forgive your sins. For Allah is All-Forgiving, Most Merciful.”",
+          "qcfV2": [
+            {
+              "page": 54,
+              "text": "ﱞ ﱟ ﱠ ﱡ ﱢ ﱣ ﱤ ﱥ ﱦ ﱧ ﱨﱩ ﱪ ﱫ ﱬ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "3:92",
+      "surahName": "Ali 'Imran",
+      "verses": [
+        {
+          "verse": 92,
+          "arabic": "لَن تَنَالُوا۟ ٱلْبِرَّ حَتَّىٰ تُنفِقُوا۟ مِمَّا تُحِبُّونَ وَمَا تُنفِقُوا۟ مِن شَىْءٍ فَإِنَّ ٱللَّهَ بِهِۦ عَلِيمٌ",
+          "translation": "You will never achieve righteousness until you donate some of what you cherish. And whatever you give is certainly well known to Allah.",
+          "qcfV2": [
+            {
+              "page": 62,
+              "text": "ﱁ ﱂ ﱃ ﱄ ﱅ ﱆ ﱇﱈ ﱉ ﱊ ﱋ ﱌ ﱍ ﱎ ﱏ ﱐ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "3:102",
+      "surahName": "Ali 'Imran",
+      "verses": [
+        {
+          "verse": 102,
+          "arabic": "يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوا۟ ٱتَّقُوا۟ ٱللَّهَ حَقَّ تُقَاتِهِۦ وَلَا تَمُوتُنَّ إِلَّا وَأَنتُم مُّسْلِمُونَ",
+          "translation": "O believers! Be mindful of Allah in the way He deserves, and do not die except in ˹a state of full˺ submission ˹to Him˺.",
+          "qcfV2": [
+            {
+              "page": 63,
+              "text": "ﱔ ﱕ ﱖ ﱗ ﱘ ﱙ ﱚ ﱛ ﱜ ﱝ ﱞ ﱟ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "3:133",
+      "surahName": "Ali 'Imran",
+      "verses": [
+        {
+          "verse": 133,
+          "arabic": "وَسَارِعُوٓا۟ إِلَىٰ مَغْفِرَةٍ مِّن رَّبِّكُمْ وَجَنَّةٍ عَرْضُهَا ٱلسَّمَٰوَٰتُ وَٱلْأَرْضُ أُعِدَّتْ لِلْمُتَّقِينَ",
+          "translation": "And hasten towards forgiveness from your Lord and a Paradise as vast as the heavens and the earth, prepared for those mindful ˹of Allah˺.",
+          "qcfV2": [
+            {
+              "page": 67,
+              "text": "ﱁ ﱂ ﱃ ﱄ ﱅ ﱆ ﱇ ﱈ ﱉ ﱊ ﱋ ﱌ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "3:134",
+      "surahName": "Ali 'Imran",
+      "verses": [
+        {
+          "verse": 134,
+          "arabic": "ٱلَّذِينَ يُنفِقُونَ فِى ٱلسَّرَّآءِ وَٱلضَّرَّآءِ وَٱلْكَٰظِمِينَ ٱلْغَيْظَ وَٱلْعَافِينَ عَنِ ٱلنَّاسِ وَٱللَّهُ يُحِبُّ ٱلْمُحْسِنِينَ",
+          "translation": "˹They are˺ those who donate in prosperity and adversity, control their anger, and pardon others. And Allah loves the good-doers.",
+          "qcfV2": [
+            {
+              "page": 67,
+              "text": "ﱎ ﱏ ﱐ ﱑ ﱒ ﱓ ﱔ ﱕ ﱖ ﱗﱘ ﱙ ﱚ ﱛ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "3:139",
+      "surahName": "Ali 'Imran",
+      "verses": [
+        {
+          "verse": 139,
+          "arabic": "وَلَا تَهِنُوا۟ وَلَا تَحْزَنُوا۟ وَأَنتُمُ ٱلْأَعْلَوْنَ إِن كُنتُم مُّؤْمِنِينَ",
+          "translation": "Do not falter or grieve, for you will have the upper hand, if you are ˹true˺ believers.",
+          "qcfV2": [
+            {
+              "page": 67,
+              "text": "ﲛ ﲜ ﲝ ﲞ ﲟ ﲠ ﲡ ﲢ ﲣ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "3:190",
+      "surahName": "Ali 'Imran",
+      "verses": [
+        {
+          "verse": 190,
+          "arabic": "إِنَّ فِى خَلْقِ ٱلسَّمَٰوَٰتِ وَٱلْأَرْضِ وَٱخْتِلَٰفِ ٱلَّيْلِ وَٱلنَّهَارِ لَـَٔايَٰتٍ لِّأُو۟لِى ٱلْأَلْبَٰبِ",
+          "translation": "Indeed, in the creation of the heavens and the earth and the alternation of the day and night there are signs for people of reason.",
+          "qcfV2": [
+            {
+              "page": 75,
+              "text": "ﱹ ﱺ ﱻ ﱼ ﱽ ﱾ ﱿ ﲀ ﲁ ﲂ ﲃ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "3:200",
+      "surahName": "Ali 'Imran",
+      "verses": [
+        {
+          "verse": 200,
+          "arabic": "يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوا۟ ٱصْبِرُوا۟ وَصَابِرُوا۟ وَرَابِطُوا۟ وَٱتَّقُوا۟ ٱللَّهَ لَعَلَّكُمْ تُفْلِحُونَ",
+          "translation": "O believers! Patiently endure, persevere, stand on guard, and be mindful of Allah, so you may be successful.",
+          "qcfV2": [
+            {
+              "page": 76,
+              "text": "ﲹ ﲺ ﲻ ﲼ ﲽ ﲾ ﲿ ﳀ ﳁ ﳂ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "4:86",
+      "surahName": "An-Nisa",
+      "verses": [
+        {
+          "verse": 86,
+          "arabic": "وَإِذَا حُيِّيتُم بِتَحِيَّةٍ فَحَيُّوا۟ بِأَحْسَنَ مِنْهَآ أَوْ رُدُّوهَآ إِنَّ ٱللَّهَ كَانَ عَلَىٰ كُلِّ شَىْءٍ حَسِيبًا",
+          "translation": "And when you are greeted, respond with a better greeting or at least similarly. Surely Allah is a ˹vigilant˺ Reckoner of all things.",
+          "qcfV2": [
+            {
+              "page": 91,
+              "text": "ﳎ ﳏ ﳐ ﳑ ﳒ ﳓ ﳔ ﳕﳖ ﳗ ﳘ ﳙ ﳚ ﳛ ﳜ ﳝ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "4:110",
+      "surahName": "An-Nisa",
+      "verses": [
+        {
+          "verse": 110,
+          "arabic": "وَمَن يَعْمَلْ سُوٓءًا أَوْ يَظْلِمْ نَفْسَهُۥ ثُمَّ يَسْتَغْفِرِ ٱللَّهَ يَجِدِ ٱللَّهَ غَفُورًا رَّحِيمًا",
+          "translation": "Whoever commits evil or wrongs themselves then seeks Allah’s forgiveness will certainly find Allah All-Forgiving, Most Merciful.",
+          "qcfV2": [
+            {
+              "page": 96,
+              "text": "ﲄ ﲅ ﲆ ﲇ ﲈ ﲉ ﲊ ﲋ ﲌ ﲍ ﲎ ﲏ ﲐ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "5:100",
+      "surahName": "Al-Ma'idah",
+      "verses": [
+        {
+          "verse": 100,
+          "arabic": "قُل لَّا يَسْتَوِى ٱلْخَبِيثُ وَٱلطَّيِّبُ وَلَوْ أَعْجَبَكَ كَثْرَةُ ٱلْخَبِيثِ فَٱتَّقُوا۟ ٱللَّهَ يَٰٓأُو۟لِى ٱلْأَلْبَٰبِ لَعَلَّكُمْ تُفْلِحُونَ",
+          "translation": "Say, ˹O Prophet,˺ “Good and evil are not equal, though you may be dazzled by the abundance of evil. So be mindful of Allah, O  people of reason, so you may be successful.”",
+          "qcfV2": [
+            {
+              "page": 124,
+              "text": "ﲍ ﲎ ﲏ ﲐ ﲑ ﲒ ﲓ ﲔ ﲕﲖ ﲗ ﲘ ﲙ ﲚ ﲛ ﲜ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "6:103",
+      "surahName": "Al-An'am",
+      "verses": [
+        {
+          "verse": 103,
+          "arabic": "لَّا تُدْرِكُهُ ٱلْأَبْصَٰرُ وَهُوَ يُدْرِكُ ٱلْأَبْصَٰرَ وَهُوَ ٱللَّطِيفُ ٱلْخَبِيرُ",
+          "translation": "No vision can encompass Him, but He encompasses all vision. For He is the Most Subtle, All-Aware. ",
+          "qcfV2": [
+            {
+              "page": 141,
+              "text": "ﱕ ﱖ ﱗ ﱘ ﱙ ﱚﱛ ﱜ ﱝ ﱞ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "6:162",
+      "surahName": "Al-An'am",
+      "verses": [
+        {
+          "verse": 162,
+          "arabic": "قُلْ إِنَّ صَلَاتِى وَنُسُكِى وَمَحْيَاىَ وَمَمَاتِى لِلَّهِ رَبِّ ٱلْعَٰلَمِينَ",
+          "translation": "Say, “Surely my prayer, my worship, my life, and my death are all for Allah—Lord of all worlds.",
+          "qcfV2": [
+            {
+              "page": 150,
+              "text": "ﲢ ﲣ ﲤ ﲥ ﲦ ﲧ ﲨ ﲩ ﲪ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "7:23",
+      "surahName": "Al-A'raf",
+      "verses": [
+        {
+          "verse": 23,
+          "arabic": "قَالَا رَبَّنَا ظَلَمْنَآ أَنفُسَنَا وَإِن لَّمْ تَغْفِرْ لَنَا وَتَرْحَمْنَا لَنَكُونَنَّ مِنَ ٱلْخَٰسِرِينَ",
+          "translation": "They replied, “Our Lord! We have wronged ourselves. If You do not forgive us and have mercy on us, we will certainly be losers.”",
+          "qcfV2": [
+            {
+              "page": 153,
+              "text": "ﱁ ﱂ ﱃ ﱄ ﱅ ﱆ ﱇ ﱈ ﱉ ﱊ ﱋ ﱌ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "7:31",
+      "surahName": "Al-A'raf",
+      "verses": [
+        {
+          "verse": 31,
+          "arabic": "يَٰبَنِىٓ ءَادَمَ خُذُوا۟ زِينَتَكُمْ عِندَ كُلِّ مَسْجِدٍ وَكُلُوا۟ وَٱشْرَبُوا۟ وَلَا تُسْرِفُوٓا۟ إِنَّهُۥ لَا يُحِبُّ ٱلْمُسْرِفِينَ",
+          "translation": "O Children of Adam! Dress properly whenever you are at worship. Eat and drink, but do not waste. Surely He does not like the wasteful.",
+          "qcfV2": [
+            {
+              "page": 154,
+              "text": "ﱁ ﱂ ﱃ ﱄ ﱅ ﱆ ﱇ ﱈ ﱉ ﱊ ﱋ ﱌﱍ ﱎ ﱏ ﱐ ﱑ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "7:56",
+      "surahName": "Al-A'raf",
+      "verses": [
+        {
+          "verse": 56,
+          "arabic": "وَلَا تُفْسِدُوا۟ فِى ٱلْأَرْضِ بَعْدَ إِصْلَٰحِهَا وَٱدْعُوهُ خَوْفًا وَطَمَعًا إِنَّ رَحْمَتَ ٱللَّهِ قَرِيبٌ مِّنَ ٱلْمُحْسِنِينَ",
+          "translation": "Do not spread corruption in the land after it has been set in order. And call upon Him with hope and fear. Indeed, Allah’s mercy is always close to the good-doers.",
+          "qcfV2": [
+            {
+              "page": 157,
+              "text": "ﲣ ﲤ ﲥ ﲦ ﲧ ﲨ ﲩ ﲪ ﲫﲬ ﲭ ﲮ ﲯ ﲰ ﲱ ﲲ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "7:199",
+      "surahName": "Al-A'raf",
+      "verses": [
+        {
+          "verse": 199,
+          "arabic": "خُذِ ٱلْعَفْوَ وَأْمُرْ بِٱلْعُرْفِ وَأَعْرِضْ عَنِ ٱلْجَٰهِلِينَ",
+          "translation": "Be gracious, enjoin what is right, and turn away from those who act ignorantly.",
+          "qcfV2": [
+            {
+              "page": 176,
+              "text": "ﱥ ﱦ ﱧ ﱨ ﱩ ﱪ ﱫ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "8:46",
+      "surahName": "Al-Anfal",
+      "verses": [
+        {
+          "verse": 46,
+          "arabic": "وَأَطِيعُوا۟ ٱللَّهَ وَرَسُولَهُۥ وَلَا تَنَٰزَعُوا۟ فَتَفْشَلُوا۟ وَتَذْهَبَ رِيحُكُمْ وَٱصْبِرُوٓا۟ إِنَّ ٱللَّهَ مَعَ ٱلصَّٰبِرِينَ",
+          "translation": "Obey Allah and His Messenger and do not dispute with one another, or you would be discouraged and weakened. Persevere! Surely Allah is with those who persevere.",
+          "qcfV2": [
+            {
+              "page": 183,
+              "text": "ﱁ ﱂ ﱃ ﱄ ﱅ ﱆ ﱇ ﱈﱉ ﱊﱋ ﱌ ﱍ ﱎ ﱏ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "8:61",
+      "surahName": "Al-Anfal",
+      "verses": [
+        {
+          "verse": 61,
+          "arabic": "وَإِن جَنَحُوا۟ لِلسَّلْمِ فَٱجْنَحْ لَهَا وَتَوَكَّلْ عَلَى ٱللَّهِ إِنَّهُۥ هُوَ ٱلسَّمِيعُ ٱلْعَلِيمُ",
+          "translation": "If the enemy is inclined towards peace, make peace with them. And put your trust in Allah. Indeed, He ˹alone˺ is the All-Hearing, All-Knowing.",
+          "qcfV2": [
+            {
+              "page": 184,
+              "text": "ﳈ ﳉ ﳊ ﳋ ﳌ ﳍ ﳎ ﳏ ﳐﳑ ﳒ ﳓ ﳔ ﳕ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "9:51",
+      "surahName": "At-Tawbah",
+      "verses": [
+        {
+          "verse": 51,
+          "arabic": "قُل لَّن يُصِيبَنَآ إِلَّا مَا كَتَبَ ٱللَّهُ لَنَا هُوَ مَوْلَىٰنَا وَعَلَى ٱللَّهِ فَلْيَتَوَكَّلِ ٱلْمُؤْمِنُونَ",
+          "translation": "Say, “Nothing will ever befall us except what Allah has destined for us. He is our Protector.” So in Allah let the believers put their trust.",
+          "qcfV2": [
+            {
+              "page": 195,
+              "text": "ﱶ ﱷ ﱸ ﱹ ﱺ ﱻ ﱼ ﱽ ﱾ ﱿﲀ ﲁ ﲂ ﲃ ﲄ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "9:119",
+      "surahName": "At-Tawbah",
+      "verses": [
+        {
+          "verse": 119,
+          "arabic": "يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوا۟ ٱتَّقُوا۟ ٱللَّهَ وَكُونُوا۟ مَعَ ٱلصَّٰدِقِينَ",
+          "translation": "O  believers! Be mindful of Allah and be with the truthful.",
+          "qcfV2": [
+            {
+              "page": 206,
+              "text": "ﱢ ﱣ ﱤ ﱥ ﱦ ﱧ ﱨ ﱩ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "10:57",
+      "surahName": "Yunus",
+      "verses": [
+        {
+          "verse": 57,
+          "arabic": "يَٰٓأَيُّهَا ٱلنَّاسُ قَدْ جَآءَتْكُم مَّوْعِظَةٌ مِّن رَّبِّكُمْ وَشِفَآءٌ لِّمَا فِى ٱلصُّدُورِ وَهُدًى وَرَحْمَةٌ لِّلْمُؤْمِنِينَ",
+          "translation": "O humanity! Indeed, there has come to you a warning from your Lord, a cure for what is in the hearts, a guide, and a mercy for the believers.",
+          "qcfV2": [
+            {
+              "page": 215,
+              "text": "ﱱ ﱲ ﱳ ﱴ ﱵ ﱶ ﱷ ﱸ ﱹ ﱺ ﱻ ﱼ ﱽ ﱾ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "10:58",
+      "surahName": "Yunus",
+      "verses": [
+        {
+          "verse": 58,
+          "arabic": "قُلْ بِفَضْلِ ٱللَّهِ وَبِرَحْمَتِهِۦ فَبِذَٰلِكَ فَلْيَفْرَحُوا۟ هُوَ خَيْرٌ مِّمَّا يَجْمَعُونَ",
+          "translation": "Say, ˹O Prophet,˺ “In Allah’s grace and mercy let them rejoice. That is far better than whatever ˹wealth˺ they amass.”",
+          "qcfV2": [
+            {
+              "page": 215,
+              "text": "ﲀ ﲁ ﲂ ﲃ ﲄ ﲅ ﲆ ﲇ ﲈ ﲉ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "11:114",
+      "surahName": "Hud",
+      "verses": [
+        {
+          "verse": 114,
+          "arabic": "وَأَقِمِ ٱلصَّلَوٰةَ طَرَفَىِ ٱلنَّهَارِ وَزُلَفًا مِّنَ ٱلَّيْلِ إِنَّ ٱلْحَسَنَٰتِ يُذْهِبْنَ ٱلسَّيِّـَٔاتِ ذَٰلِكَ ذِكْرَىٰ لِلذَّٰكِرِينَ",
+          "translation": "Establish prayer ˹O Prophet˺ at both ends of the day and in the early part of the night. Surely good deeds wipe out evil deeds. That is a reminder for the mindful.",
+          "qcfV2": [
+            {
+              "page": 234,
+              "text": "ﲙ ﲚ ﲛ ﲜ ﲝ ﲞ ﲟﲠ ﲡ ﲢ ﲣ ﲤﲥ ﲦ ﲧ ﲨ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "11:115",
+      "surahName": "Hud",
+      "verses": [
+        {
+          "verse": 115,
+          "arabic": "وَٱصْبِرْ فَإِنَّ ٱللَّهَ لَا يُضِيعُ أَجْرَ ٱلْمُحْسِنِينَ",
+          "translation": "And be patient! Certainly Allah does not discount the reward of the good-doers.",
+          "qcfV2": [
+            {
+              "page": 234,
+              "text": "ﲪ ﲫ ﲬ ﲭ ﲮ ﲯ ﲰ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "12:86",
+      "surahName": "Yusuf",
+      "verses": [
+        {
+          "verse": 86,
+          "arabic": "قَالَ إِنَّمَآ أَشْكُوا۟ بَثِّى وَحُزْنِىٓ إِلَى ٱللَّهِ وَأَعْلَمُ مِنَ ٱللَّهِ مَا لَا تَعْلَمُونَ",
+          "translation": "He replied, “I complain of my anguish and sorrow only to Allah, and I know from Allah what you do not know.",
+          "qcfV2": [
+            {
+              "page": 245,
+              "text": "ﳇ ﳈ ﳉ ﳊ ﳋ ﳌ ﳍ ﳎ ﳏ ﳐ ﳑ ﳒ ﳓ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "13:28",
+      "surahName": "Ar-Ra'd",
+      "verses": [
+        {
+          "verse": 28,
+          "arabic": "ٱلَّذِينَ ءَامَنُوا۟ وَتَطْمَئِنُّ قُلُوبُهُم بِذِكْرِ ٱللَّهِ أَلَا بِذِكْرِ ٱللَّهِ تَطْمَئِنُّ ٱلْقُلُوبُ",
+          "translation": "those who believe and whose hearts find comfort in the remembrance of Allah. Surely in the remembrance of Allah do hearts find comfort.",
+          "qcfV2": [
+            {
+              "page": 252,
+              "text": "ﳖ ﳗ ﳘ ﳙ ﳚ ﳛﳜ ﳝ ﳞ ﳟ ﳠ ﳡ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "13:29",
+      "surahName": "Ar-Ra'd",
+      "verses": [
+        {
+          "verse": 29,
+          "arabic": "ٱلَّذِينَ ءَامَنُوا۟ وَعَمِلُوا۟ ٱلصَّٰلِحَٰتِ طُوبَىٰ لَهُمْ وَحُسْنُ مَـَٔابٍ",
+          "translation": "Those who believe and do good, for them will be bliss and an honourable destination.”",
+          "qcfV2": [
+            {
+              "page": 253,
+              "text": "ﱁ ﱂ ﱃ ﱄ ﱅ ﱆ ﱇ ﱈ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "14:7",
+      "surahName": "Ibrahim",
+      "verses": [
+        {
+          "verse": 7,
+          "arabic": "وَإِذْ تَأَذَّنَ رَبُّكُمْ لَئِن شَكَرْتُمْ لَأَزِيدَنَّكُمْ وَلَئِن كَفَرْتُمْ إِنَّ عَذَابِى لَشَدِيدٌ",
+          "translation": "And ˹remember˺ when your Lord proclaimed, ‘If you are grateful, I will certainly give you more. But if you are ungrateful, surely My punishment is severe.’”",
+          "qcfV2": [
+            {
+              "page": 256,
+              "text": "ﱝ ﱞ ﱟ ﱠ ﱡ ﱢﱣ ﱤ ﱥ ﱦ ﱧ ﱨ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "14:40",
+      "surahName": "Ibrahim",
+      "verses": [
+        {
+          "verse": 40,
+          "arabic": "رَبِّ ٱجْعَلْنِى مُقِيمَ ٱلصَّلَوٰةِ وَمِن ذُرِّيَّتِى رَبَّنَا وَتَقَبَّلْ دُعَآءِ",
+          "translation": "My Lord! Make me and those ˹believers˺ of my descendants keep up prayer. Our Lord! Accept my prayers.",
+          "qcfV2": [
+            {
+              "page": 260,
+              "text": "ﲱ ﲲ ﲳ ﲴ ﲵ ﲶﲷ ﲸ ﲹ ﲺ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "14:41",
+      "surahName": "Ibrahim",
+      "verses": [
+        {
+          "verse": 41,
+          "arabic": "رَبَّنَا ٱغْفِرْ لِى وَلِوَٰلِدَىَّ وَلِلْمُؤْمِنِينَ يَوْمَ يَقُومُ ٱلْحِسَابُ",
+          "translation": "Our Lord! Forgive me, my parents, and the believers on the Day when the judgment will come to pass.”",
+          "qcfV2": [
+            {
+              "page": 260,
+              "text": "ﲼ ﲽ ﲾ ﲿ ﳀ ﳁ ﳂ ﳃ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "15:49",
+      "surahName": "Al-Hijr",
+      "verses": [
+        {
+          "verse": 49,
+          "arabic": "نَبِّئْ عِبَادِىٓ أَنِّىٓ أَنَا ٱلْغَفُورُ ٱلرَّحِيمُ",
+          "translation": "Inform My servants ˹O Prophet˺ that I am truly the All-Forgiving, Most Merciful,",
+          "qcfV2": [
+            {
+              "page": 264,
+              "text": "ﳂﳃ ﳄ ﳅ ﳆ ﳇ ﳈ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "15:50",
+      "surahName": "Al-Hijr",
+      "verses": [
+        {
+          "verse": 50,
+          "arabic": "وَأَنَّ عَذَابِى هُوَ ٱلْعَذَابُ ٱلْأَلِيمُ",
+          "translation": "and that My torment is indeed the most painful.",
+          "qcfV2": [
+            {
+              "page": 264,
+              "text": "ﳊ ﳋ ﳌ ﳍ ﳎ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "16:90",
+      "surahName": "An-Nahl",
+      "verses": [
+        {
+          "verse": 90,
+          "arabic": "إِنَّ ٱللَّهَ يَأْمُرُ بِٱلْعَدْلِ وَٱلْإِحْسَٰنِ وَإِيتَآئِ ذِى ٱلْقُرْبَىٰ وَيَنْهَىٰ عَنِ ٱلْفَحْشَآءِ وَٱلْمُنكَرِ وَٱلْبَغْىِ يَعِظُكُمْ لَعَلَّكُمْ تَذَكَّرُونَ",
+          "translation": "Indeed, Allah commands justice, grace, as well as courtesy to close relatives. He forbids indecency, wickedness, and aggression. He instructs you so perhaps you will be mindful.",
+          "qcfV2": [
+            {
+              "page": 277,
+              "text": "ﱪ ﱫ ﱬ ﱭ ﱮ ﱯ ﱰ ﱱ ﱲ ﱳ ﱴ ﱵ ﱶ ﱷﱸ ﱹ ﱺ ﱻ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "17:24",
+      "surahName": "Al-Isra",
+      "verses": [
+        {
+          "verse": 24,
+          "arabic": "وَٱخْفِضْ لَهُمَا جَنَاحَ ٱلذُّلِّ مِنَ ٱلرَّحْمَةِ وَقُل رَّبِّ ٱرْحَمْهُمَا كَمَا رَبَّيَانِى صَغِيرًا",
+          "translation": "And be humble with them out of mercy, and pray, “My Lord! Be merciful to them as they raised me when I was young.”",
+          "qcfV2": [
+            {
+              "page": 284,
+              "text": "ﲢ ﲣ ﲤ ﲥ ﲦ ﲧ ﲨ ﲩ ﲪ ﲫ ﲬ ﲭ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "17:26",
+      "surahName": "Al-Isra",
+      "verses": [
+        {
+          "verse": 26,
+          "arabic": "وَءَاتِ ذَا ٱلْقُرْبَىٰ حَقَّهُۥ وَٱلْمِسْكِينَ وَٱبْنَ ٱلسَّبِيلِ وَلَا تُبَذِّرْ تَبْذِيرًا",
+          "translation": "Give to close relatives their due, as well as the poor and ˹needy˺ travellers. And do not spend wastefully.",
+          "qcfV2": [
+            {
+              "page": 284,
+              "text": "ﲽ ﲾ ﲿ ﳀ ﳁ ﳂ ﳃ ﳄ ﳅ ﳆ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "17:29",
+      "surahName": "Al-Isra",
+      "verses": [
+        {
+          "verse": 29,
+          "arabic": "وَلَا تَجْعَلْ يَدَكَ مَغْلُولَةً إِلَىٰ عُنُقِكَ وَلَا تَبْسُطْهَا كُلَّ ٱلْبَسْطِ فَتَقْعُدَ مَلُومًا مَّحْسُورًا",
+          "translation": "Do not be so tight-fisted, for you will be blameworthy; nor so open-handed, for you will end up in poverty.",
+          "qcfV2": [
+            {
+              "page": 285,
+              "text": "ﱎ ﱏ ﱐ ﱑ ﱒ ﱓ ﱔ ﱕ ﱖ ﱗ ﱘ ﱙ ﱚ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "17:36",
+      "surahName": "Al-Isra",
+      "verses": [
+        {
+          "verse": 36,
+          "arabic": "وَلَا تَقْفُ مَا لَيْسَ لَكَ بِهِۦ عِلْمٌ إِنَّ ٱلسَّمْعَ وَٱلْبَصَرَ وَٱلْفُؤَادَ كُلُّ أُو۟لَٰٓئِكَ كَانَ عَنْهُ مَسْـُٔولًا",
+          "translation": "Do not follow what you have no ˹sure˺ knowledge of. Indeed, all will be called to account for ˹their˺ hearing, sight, and intellect.",
+          "qcfV2": [
+            {
+              "page": 285,
+              "text": "ﲾ ﲿ ﳀ ﳁ ﳂ ﳃ ﳄﳅ ﳆ ﳇ ﳈ ﳉ ﳊ ﳋ ﳌ ﳍ ﳎ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "17:37",
+      "surahName": "Al-Isra",
+      "verses": [
+        {
+          "verse": 37,
+          "arabic": "وَلَا تَمْشِ فِى ٱلْأَرْضِ مَرَحًا إِنَّكَ لَن تَخْرِقَ ٱلْأَرْضَ وَلَن تَبْلُغَ ٱلْجِبَالَ طُولًا",
+          "translation": "And do not walk on the earth arrogantly. Surely you can neither crack the earth nor stretch to the height of the mountains.",
+          "qcfV2": [
+            {
+              "page": 285,
+              "text": "ﳐ ﳑ ﳒ ﳓ ﳔﳕ ﳖ ﳗ ﳘ ﳙ ﳚ ﳛ ﳜ ﳝ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "18:10",
+      "surahName": "Al-Kahf",
+      "verses": [
+        {
+          "verse": 10,
+          "arabic": "إِذْ أَوَى ٱلْفِتْيَةُ إِلَى ٱلْكَهْفِ فَقَالُوا۟ رَبَّنَآ ءَاتِنَا مِن لَّدُنكَ رَحْمَةً وَهَيِّئْ لَنَا مِنْ أَمْرِنَا رَشَدًا",
+          "translation": "˹Remember˺ when those youths took refuge in the cave, and said, “Our Lord! Grant us mercy from Yourself and guide us rightly through our ordeal.”",
+          "qcfV2": [
+            {
+              "page": 294,
+              "text": "ﱾ ﱿ ﲀ ﲁ ﲂ ﲃ ﲄ ﲅ ﲆ ﲇ ﲈ ﲉ ﲊ ﲋ ﲌ ﲍ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "18:46",
+      "surahName": "Al-Kahf",
+      "verses": [
+        {
+          "verse": 46,
+          "arabic": "ٱلْمَالُ وَٱلْبَنُونَ زِينَةُ ٱلْحَيَوٰةِ ٱلدُّنْيَا وَٱلْبَٰقِيَٰتُ ٱلصَّٰلِحَٰتُ خَيْرٌ عِندَ رَبِّكَ ثَوَابًا وَخَيْرٌ أَمَلًا",
+          "translation": "Wealth and children are the adornment of this worldly life, but the everlasting good deeds are far better with your Lord in reward and in hope. ",
+          "qcfV2": [
+            {
+              "page": 299,
+              "text": "ﱁ ﱂ ﱃ ﱄ ﱅﱆ ﱇ ﱈ ﱉ ﱊ ﱋ ﱌ ﱍ ﱎ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "20:25",
+      "surahName": "Taha",
+      "verses": [
+        {
+          "verse": 25,
+          "arabic": "قَالَ رَبِّ ٱشْرَحْ لِى صَدْرِى",
+          "translation": "Moses prayed, “My Lord! Uplift my heart for me,",
+          "qcfV2": [
+            {
+              "page": 313,
+              "text": "ﲦ ﲧ ﲨ ﲩ ﲪ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "21:83",
+      "surahName": "Al-Anbiya",
+      "verses": [
+        {
+          "verse": 83,
+          "arabic": "وَأَيُّوبَ إِذْ نَادَىٰ رَبَّهُۥٓ أَنِّى مَسَّنِىَ ٱلضُّرُّ وَأَنتَ أَرْحَمُ ٱلرَّٰحِمِينَ",
+          "translation": "And ˹remember˺ when Job cried out to his Lord, “I have been touched with adversity, and You are the Most Merciful of the merciful.”",
+          "qcfV2": [
+            {
+              "page": 329,
+              "text": "ﱏ ﱐ ﱑ ﱒ ﱓ ﱔ ﱕ ﱖ ﱗ ﱘ ﱙ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "21:107",
+      "surahName": "Al-Anbiya",
+      "verses": [
+        {
+          "verse": 107,
+          "arabic": "وَمَآ أَرْسَلْنَٰكَ إِلَّا رَحْمَةً لِّلْعَٰلَمِينَ",
+          "translation": "We have sent you ˹O Prophet˺ only as a mercy for the whole world.",
+          "qcfV2": [
+            {
+              "page": 331,
+              "text": "ﲀ ﲁ ﲂ ﲃ ﲄ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "23:1",
+      "surahName": "Al-Mu'minun",
+      "verses": [
+        {
+          "verse": 1,
+          "arabic": "بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ قَدْ أَفْلَحَ ٱلْمُؤْمِنُونَ",
+          "translation": "Successful indeed are the believers:",
+          "qcfV2": [
+            {
+              "page": 342,
+              "text": "ﱁ ﱂ ﱃ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "25:63",
+      "surahName": "Al-Furqan",
+      "verses": [
+        {
+          "verse": 63,
+          "arabic": "وَعِبَادُ ٱلرَّحْمَٰنِ ٱلَّذِينَ يَمْشُونَ عَلَى ٱلْأَرْضِ هَوْنًا وَإِذَا خَاطَبَهُمُ ٱلْجَٰهِلُونَ قَالُوا۟ سَلَٰمًا",
+          "translation": "The ˹true˺ servants of the Most Compassionate are those who walk on the earth humbly, and when the foolish address them ˹improperly˺, they only respond with peace.",
+          "qcfV2": [
+            {
+              "page": 365,
+              "text": "ﲢ ﲣ ﲤ ﲥ ﲦ ﲧ ﲨ ﲩ ﲪ ﲫ ﲬ ﲭ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "25:67",
+      "surahName": "Al-Furqan",
+      "verses": [
+        {
+          "verse": 67,
+          "arabic": "وَٱلَّذِينَ إِذَآ أَنفَقُوا۟ لَمْ يُسْرِفُوا۟ وَلَمْ يَقْتُرُوا۟ وَكَانَ بَيْنَ ذَٰلِكَ قَوَامًا",
+          "translation": "˹They are˺ those who spend neither wastefully nor stingily, but moderately in between.",
+          "qcfV2": [
+            {
+              "page": 365,
+              "text": "ﳇ ﳈ ﳉ ﳊ ﳋ ﳌ ﳍ ﳎ ﳏ ﳐ ﳑ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "25:74",
+      "surahName": "Al-Furqan",
+      "verses": [
+        {
+          "verse": 74,
+          "arabic": "وَٱلَّذِينَ يَقُولُونَ رَبَّنَا هَبْ لَنَا مِنْ أَزْوَٰجِنَا وَذُرِّيَّٰتِنَا قُرَّةَ أَعْيُنٍ وَٱجْعَلْنَا لِلْمُتَّقِينَ إِمَامًا",
+          "translation": "˹They are˺ those who pray, “Our Lord! Bless us with ˹pious˺ spouses and offspring who will be the joy of our hearts, and make us models for the righteous.”",
+          "qcfV2": [
+            {
+              "page": 366,
+              "text": "ﲓ ﲔ ﲕ ﲖ ﲗ ﲘ ﲙ ﲚ ﲛ ﲜ ﲝ ﲞ ﲟ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "29:69",
+      "surahName": "Al-'Ankabut",
+      "verses": [
+        {
+          "verse": 69,
+          "arabic": "وَٱلَّذِينَ جَٰهَدُوا۟ فِينَا لَنَهْدِيَنَّهُمْ سُبُلَنَا وَإِنَّ ٱللَّهَ لَمَعَ ٱلْمُحْسِنِينَ",
+          "translation": "As for those who struggle in Our cause, We will surely guide them along Our Way. And Allah is certainly with the good-doers.",
+          "qcfV2": [
+            {
+              "page": 404,
+              "text": "ﲐ ﲑ ﲒ ﲓ ﲔﲕ ﲖ ﲗ ﲘ ﲙ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "30:60",
+      "surahName": "Ar-Rum",
+      "verses": [
+        {
+          "verse": 60,
+          "arabic": "فَٱصْبِرْ إِنَّ وَعْدَ ٱللَّهِ حَقٌّ وَلَا يَسْتَخِفَّنَّكَ ٱلَّذِينَ لَا يُوقِنُونَ",
+          "translation": "So be patient, for the promise of Allah certainly is true. And do not be disturbed by those who have no sure faith.",
+          "qcfV2": [
+            {
+              "page": 410,
+              "text": "ﳏ ﳐ ﳑ ﳒ ﳓﳔ ﳕ ﳖ ﳗ ﳘ ﳙ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "31:13",
+      "surahName": "Luqman",
+      "verses": [
+        {
+          "verse": 13,
+          "arabic": "وَإِذْ قَالَ لُقْمَٰنُ لِٱبْنِهِۦ وَهُوَ يَعِظُهُۥ يَٰبُنَىَّ لَا تُشْرِكْ بِٱللَّهِ إِنَّ ٱلشِّرْكَ لَظُلْمٌ عَظِيمٌ",
+          "translation": "And ˹remember˺ when Luqmân said to his son, while advising him, “O my dear son! Never associate ˹anything˺ with Allah ˹in worship˺, for associating ˹others with Him˺ is truly the worst of all wrongs.”",
+          "qcfV2": [
+            {
+              "page": 412,
+              "text": "ﱖ ﱗ ﱘ ﱙ ﱚ ﱛ ﱜ ﱝ ﱞ ﱟﱠ ﱡ ﱢ ﱣ ﱤ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "31:18",
+      "surahName": "Luqman",
+      "verses": [
+        {
+          "verse": 18,
+          "arabic": "وَلَا تُصَعِّرْ خَدَّكَ لِلنَّاسِ وَلَا تَمْشِ فِى ٱلْأَرْضِ مَرَحًا إِنَّ ٱللَّهَ لَا يُحِبُّ كُلَّ مُخْتَالٍ فَخُورٍ",
+          "translation": "“And do not turn your nose up to people, nor walk pridefully upon the earth. Surely Allah does not like whoever is arrogant, boastful.",
+          "qcfV2": [
+            {
+              "page": 412,
+              "text": "ﳆ ﳇ ﳈ ﳉ ﳊ ﳋ ﳌ ﳍ ﳎﳏ ﳐ ﳑ ﳒ ﳓ ﳔ ﳕ ﳖ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "31:19",
+      "surahName": "Luqman",
+      "verses": [
+        {
+          "verse": 19,
+          "arabic": "وَٱقْصِدْ فِى مَشْيِكَ وَٱغْضُضْ مِن صَوْتِكَ إِنَّ أَنكَرَ ٱلْأَصْوَٰتِ لَصَوْتُ ٱلْحَمِيرِ",
+          "translation": "Be moderate in your pace. And lower your voice, for the ugliest of all voices is certainly the braying of donkeys.”",
+          "qcfV2": [
+            {
+              "page": 412,
+              "text": "ﳘ ﳙ ﳚ ﳛ ﳜ ﳝﳞ ﳟ ﳠ ﳡ ﳢ ﳣ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "33:41",
+      "surahName": "Al-Ahzab",
+      "verses": [
+        {
+          "verse": 41,
+          "arabic": "يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوا۟ ٱذْكُرُوا۟ ٱللَّهَ ذِكْرًا كَثِيرًا",
+          "translation": "O believers! Always remember Allah often,",
+          "qcfV2": [
+            {
+              "page": 423,
+              "text": "ﳉ ﳊ ﳋ ﳌ ﳍ ﳎ ﳏ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "35:15",
+      "surahName": "Fatir",
+      "verses": [
+        {
+          "verse": 15,
+          "arabic": "يَٰٓأَيُّهَا ٱلنَّاسُ أَنتُمُ ٱلْفُقَرَآءُ إِلَى ٱللَّهِ وَٱللَّهُ هُوَ ٱلْغَنِىُّ ٱلْحَمِيدُ",
+          "translation": "O humanity! It is you who stand in need of Allah, but Allah ˹alone˺ is the Self-Sufficient, Praiseworthy.",
+          "qcfV2": [
+            {
+              "page": 436,
+              "text": "ﲕ ﲖ ﲗ ﲘ ﲙ ﲚ ﲛﲜ ﲝ ﲞ ﲟ ﲠ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "36:58",
+      "surahName": "Ya-Sin",
+      "verses": [
+        {
+          "verse": 58,
+          "arabic": "سَلَٰمٌ قَوْلًا مِّن رَّبٍّ رَّحِيمٍ",
+          "translation": "And “Peace!” will be ˹their˺ greeting from the Merciful Lord.",
+          "qcfV2": [
+            {
+              "page": 444,
+              "text": "ﱘ ﱙ ﱚ ﱛ ﱜ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "36:82",
+      "surahName": "Ya-Sin",
+      "verses": [
+        {
+          "verse": 82,
+          "arabic": "إِنَّمَآ أَمْرُهُۥٓ إِذَآ أَرَادَ شَيْـًٔا أَن يَقُولَ لَهُۥ كُن فَيَكُونُ",
+          "translation": "All it takes, when He wills something ˹to be˺, is simply to say to it: “Be!” And it is!",
+          "qcfV2": [
+            {
+              "page": 445,
+              "text": "ﲹ ﲺ ﲻ ﲼ ﲽ ﲾ ﲿ ﳀ ﳁ ﳂ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "39:36",
+      "surahName": "Az-Zumar",
+      "verses": [
+        {
+          "verse": 36,
+          "arabic": "أَلَيْسَ ٱللَّهُ بِكَافٍ عَبْدَهُۥ وَيُخَوِّفُونَكَ بِٱلَّذِينَ مِن دُونِهِۦ وَمَن يُضْلِلِ ٱللَّهُ فَمَا لَهُۥ مِنْ هَادٍ",
+          "translation": "Is Allah not sufficient for His servant? Yet they threaten you with other ˹powerless˺ gods besides Him! Whoever Allah leaves to stray will be left with no guide.",
+          "qcfV2": [
+            {
+              "page": 462,
+              "text": "ﱳ ﱴ ﱵ ﱶﱷ ﱸ ﱹ ﱺ ﱻﱼ ﱽ ﱾ ﱿ ﲀ ﲁ ﲂ ﲃ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "39:54",
+      "surahName": "Az-Zumar",
+      "verses": [
+        {
+          "verse": 54,
+          "arabic": "وَأَنِيبُوٓا۟ إِلَىٰ رَبِّكُمْ وَأَسْلِمُوا۟ لَهُۥ مِن قَبْلِ أَن يَأْتِيَكُمُ ٱلْعَذَابُ ثُمَّ لَا تُنصَرُونَ",
+          "translation": "Turn to your Lord ˹in repentance˺, and ˹fully˺ submit to Him before the punishment reaches you, ˹for˺ then you will not be helped.",
+          "qcfV2": [
+            {
+              "page": 464,
+              "text": "ﲫ ﲬ ﲭ ﲮ ﲯ ﲰ ﲱ ﲲ ﲳ ﲴ ﲵ ﲶ ﲷ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "40:60",
+      "surahName": "Ghafir",
+      "verses": [
+        {
+          "verse": 60,
+          "arabic": "وَقَالَ رَبُّكُمُ ٱدْعُونِىٓ أَسْتَجِبْ لَكُمْ إِنَّ ٱلَّذِينَ يَسْتَكْبِرُونَ عَنْ عِبَادَتِى سَيَدْخُلُونَ جَهَنَّمَ دَاخِرِينَ",
+          "translation": "Your Lord has proclaimed, “Call upon Me, I will respond to you. Surely those who are too proud to worship Me will enter Hell, fully humbled.”",
+          "qcfV2": [
+            {
+              "page": 474,
+              "text": "ﱍ ﱎ ﱏ ﱐ ﱑﱒ ﱓ ﱔ ﱕ ﱖ ﱗ ﱘ ﱙ ﱚ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "42:30",
+      "surahName": "Ash-Shuraa",
+      "verses": [
+        {
+          "verse": 30,
+          "arabic": "وَمَآ أَصَٰبَكُم مِّن مُّصِيبَةٍ فَبِمَا كَسَبَتْ أَيْدِيكُمْ وَيَعْفُوا۟ عَن كَثِيرٍ",
+          "translation": "Whatever affliction befalls you is because of what your own hands have committed. And He pardons much.",
+          "qcfV2": [
+            {
+              "page": 486,
+              "text": "ﳌ ﳍ ﳎ ﳏ ﳐ ﳑ ﳒ ﳓ ﳔ ﳕ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "42:43",
+      "surahName": "Ash-Shuraa",
+      "verses": [
+        {
+          "verse": 43,
+          "arabic": "وَلَمَن صَبَرَ وَغَفَرَ إِنَّ ذَٰلِكَ لَمِنْ عَزْمِ ٱلْأُمُورِ",
+          "translation": "And whoever endures patiently and forgives—surely this is a resolve to aspire to.",
+          "qcfV2": [
+            {
+              "page": 487,
+              "text": "ﳈ ﳉ ﳊ ﳋ ﳌ ﳍ ﳎ ﳏ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "45:15",
+      "surahName": "Al-Jathiyah",
+      "verses": [
+        {
+          "verse": 15,
+          "arabic": "مَنْ عَمِلَ صَٰلِحًا فَلِنَفْسِهِۦ وَمَنْ أَسَآءَ فَعَلَيْهَا ثُمَّ إِلَىٰ رَبِّكُمْ تُرْجَعُونَ",
+          "translation": "Whoever does good, it is to their own benefit. And whoever does evil, it is to their own loss. Then to your Lord you will ˹all˺ be returned.",
+          "qcfV2": [
+            {
+              "page": 500,
+              "text": "ﱐ ﱑ ﱒ ﱓﱔ ﱕ ﱖ ﱗﱘ ﱙ ﱚ ﱛ ﱜ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "46:13",
+      "surahName": "Al-Ahqaf",
+      "verses": [
+        {
+          "verse": 13,
+          "arabic": "إِنَّ ٱلَّذِينَ قَالُوا۟ رَبُّنَا ٱللَّهُ ثُمَّ ٱسْتَقَٰمُوا۟ فَلَا خَوْفٌ عَلَيْهِمْ وَلَا هُمْ يَحْزَنُونَ",
+          "translation": "Surely those who say, “Our Lord is Allah,” and then remain steadfast—there will be no fear for them, nor will they grieve.",
+          "qcfV2": [
+            {
+              "page": 503,
+              "text": "ﳓ ﳔ ﳕ ﳖ ﳗ ﳘ ﳙ ﳚ ﳛ ﳜ ﳝ ﳞ ﳟ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "47:7",
+      "surahName": "Muhammad",
+      "verses": [
+        {
+          "verse": 7,
+          "arabic": "يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوٓا۟ إِن تَنصُرُوا۟ ٱللَّهَ يَنصُرْكُمْ وَيُثَبِّتْ أَقْدَامَكُمْ",
+          "translation": "O believers! If you stand up for Allah, He will help you and make your steps firm.",
+          "qcfV2": [
+            {
+              "page": 507,
+              "text": "ﲤ ﲥ ﲦ ﲧ ﲨ ﲩ ﲪ ﲫ ﲬ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "49:10",
+      "surahName": "Al-Hujurat",
+      "verses": [
+        {
+          "verse": 10,
+          "arabic": "إِنَّمَا ٱلْمُؤْمِنُونَ إِخْوَةٌ فَأَصْلِحُوا۟ بَيْنَ أَخَوَيْكُمْ وَٱتَّقُوا۟ ٱللَّهَ لَعَلَّكُمْ تُرْحَمُونَ",
+          "translation": "The believers are but one brotherhood, so make peace between your brothers. And be mindful of Allah so you may be shown mercy.",
+          "qcfV2": [
+            {
+              "page": 516,
+              "text": "ﲫ ﲬ ﲭ ﲮ ﲯ ﲰﲱ ﲲ ﲳ ﲴ ﲵ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "50:16",
+      "surahName": "Qaf",
+      "verses": [
+        {
+          "verse": 16,
+          "arabic": "وَلَقَدْ خَلَقْنَا ٱلْإِنسَٰنَ وَنَعْلَمُ مَا تُوَسْوِسُ بِهِۦ نَفْسُهُۥ وَنَحْنُ أَقْرَبُ إِلَيْهِ مِنْ حَبْلِ ٱلْوَرِيدِ",
+          "translation": "Indeed, ˹it is˺ We ˹Who˺ created humankind and ˹fully˺ know what their souls whisper to them, and We are closer to them than ˹their˺ jugular vein.",
+          "qcfV2": [
+            {
+              "page": 519,
+              "text": "ﱁ ﱂ ﱃ ﱄ ﱅ ﱆ ﱇ ﱈﱉ ﱊ ﱋ ﱌ ﱍ ﱎ ﱏ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "51:56",
+      "surahName": "Adh-Dhariyat",
+      "verses": [
+        {
+          "verse": 56,
+          "arabic": "وَمَا خَلَقْتُ ٱلْجِنَّ وَٱلْإِنسَ إِلَّا لِيَعْبُدُونِ",
+          "translation": "I did not create jinn and humans except to worship Me.",
+          "qcfV2": [
+            {
+              "page": 523,
+              "text": "ﱣ ﱤ ﱥ ﱦ ﱧ ﱨ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "53:39",
+      "surahName": "An-Najm",
+      "verses": [
+        {
+          "verse": 39,
+          "arabic": "وَأَن لَّيْسَ لِلْإِنسَٰنِ إِلَّا مَا سَعَىٰ",
+          "translation": "and that each person will only have what they endeavoured towards,",
+          "qcfV2": [
+            {
+              "page": 527,
+              "text": "ﳑ ﳒ ﳓ ﳔ ﳕ ﳖ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "53:42",
+      "surahName": "An-Najm",
+      "verses": [
+        {
+          "verse": 42,
+          "arabic": "وَأَنَّ إِلَىٰ رَبِّكَ ٱلْمُنتَهَىٰ",
+          "translation": "and that to your Lord ˹alone˺ is the ultimate return ˹of all things˺.",
+          "qcfV2": [
+            {
+              "page": 527,
+              "text": "ﳢ ﳣ ﳤ ﳥ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "54:17",
+      "surahName": "Al-Qamar",
+      "verses": [
+        {
+          "verse": 17,
+          "arabic": "وَلَقَدْ يَسَّرْنَا ٱلْقُرْءَانَ لِلذِّكْرِ فَهَلْ مِن مُّدَّكِرٍ",
+          "translation": "And We have certainly made the Quran easy to remember. So is there anyone who will be mindful?",
+          "qcfV2": [
+            {
+              "page": 529,
+              "text": "ﲎ ﲏ ﲐ ﲑ ﲒ ﲓ ﲔ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "55:13",
+      "surahName": "Ar-Rahman",
+      "verses": [
+        {
+          "verse": 13,
+          "arabic": "فَبِأَىِّ ءَالَآءِ رَبِّكُمَا تُكَذِّبَانِ",
+          "translation": "Then which of your Lord’s favours will you ˹humans and jinn˺ both deny? ",
+          "qcfV2": [
+            {
+              "page": 531,
+              "text": "ﲚ ﲛ ﲜ ﲝ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "55:60",
+      "surahName": "Ar-Rahman",
+      "verses": [
+        {
+          "verse": 60,
+          "arabic": "هَلْ جَزَآءُ ٱلْإِحْسَٰنِ إِلَّا ٱلْإِحْسَٰنُ",
+          "translation": "Is there any reward for goodness except goodness?",
+          "qcfV2": [
+            {
+              "page": 533,
+              "text": "ﲧ ﲨ ﲩ ﲪ ﲫ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "57:3",
+      "surahName": "Al-Hadid",
+      "verses": [
+        {
+          "verse": 3,
+          "arabic": "هُوَ ٱلْأَوَّلُ وَٱلْـَٔاخِرُ وَٱلظَّٰهِرُ وَٱلْبَاطِنُ وَهُوَ بِكُلِّ شَىْءٍ عَلِيمٌ",
+          "translation": "He is the First and the Last, the Most High and Most Near, and He has ˹perfect˺ knowledge of all things.",
+          "qcfV2": [
+            {
+              "page": 537,
+              "text": "ﳃ ﳄ ﳅ ﳆ ﳇﳈ ﳉ ﳊ ﳋ ﳌ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "64:11",
+      "surahName": "At-Taghabun",
+      "verses": [
+        {
+          "verse": 11,
+          "arabic": "مَآ أَصَابَ مِن مُّصِيبَةٍ إِلَّا بِإِذْنِ ٱللَّهِ وَمَن يُؤْمِنۢ بِٱللَّهِ يَهْدِ قَلْبَهُۥ وَٱللَّهُ بِكُلِّ شَىْءٍ عَلِيمٌ",
+          "translation": "No calamity befalls ˹anyone˺ except by Allah’s Will. And whoever has faith in Allah, He will ˹rightly˺ guide their hearts ˹through adversity˺. And Allah has ˹perfect˺ knowledge of all things.",
+          "qcfV2": [
+            {
+              "page": 557,
+              "text": "ﱎ ﱏ ﱐ ﱑ ﱒ ﱓ ﱔﱕ ﱖ ﱗ ﱘ ﱙ ﱚﱛ ﱜ ﱝ ﱞ ﱟ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "67:2",
+      "surahName": "Al-Mulk",
+      "verses": [
+        {
+          "verse": 2,
+          "arabic": "ٱلَّذِى خَلَقَ ٱلْمَوْتَ وَٱلْحَيَوٰةَ لِيَبْلُوَكُمْ أَيُّكُمْ أَحْسَنُ عَمَلًا وَهُوَ ٱلْعَزِيزُ ٱلْغَفُورُ",
+          "translation": "˹He is the One˺ Who created death and life in order to test which of you is best in deeds. And He is the Almighty, All-Forgiving.",
+          "qcfV2": [
+            {
+              "page": 562,
+              "text": "ﱋ ﱌ ﱍ ﱎ ﱏ ﱐ ﱑ ﱒﱓ ﱔ ﱕ ﱖ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "73:8",
+      "surahName": "Al-Muzzammil",
+      "verses": [
+        {
+          "verse": 8,
+          "arabic": "وَٱذْكُرِ ٱسْمَ رَبِّكَ وَتَبَتَّلْ إِلَيْهِ تَبْتِيلًا",
+          "translation": "˹Always˺ remember the Name of your Lord, and devote yourself to Him wholeheartedly.",
+          "qcfV2": [
+            {
+              "page": 574,
+              "text": "ﱬ ﱭ ﱮ ﱯ ﱰ ﱱ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "87:14",
+      "surahName": "Al-A'la",
+      "verses": [
+        {
+          "verse": 14,
+          "arabic": "قَدْ أَفْلَحَ مَن تَزَكَّىٰ",
+          "translation": "Successful indeed are those who purify themselves,",
+          "qcfV2": [
+            {
+              "page": 592,
+              "text": "ﱐ ﱑ ﱒ ﱓ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "87:15",
+      "surahName": "Al-A'la",
+      "verses": [
+        {
+          "verse": 15,
+          "arabic": "وَذَكَرَ ٱسْمَ رَبِّهِۦ فَصَلَّىٰ",
+          "translation": "remember the Name of their Lord, and pray.",
+          "qcfV2": [
+            {
+              "page": 592,
+              "text": "ﱕ ﱖ ﱗ ﱘ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "93:3",
+      "surahName": "Ad-Duhaa",
+      "verses": [
+        {
+          "verse": 3,
+          "arabic": "مَا وَدَّعَكَ رَبُّكَ وَمَا قَلَىٰ",
+          "translation": "Your Lord ˹O Prophet˺ has not abandoned you, nor has He become hateful ˹of you˺.",
+          "qcfV2": [
+            {
+              "page": 596,
+              "text": "ﱿ ﲀ ﲁ ﲂ ﲃ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "93:4",
+      "surahName": "Ad-Duhaa",
+      "verses": [
+        {
+          "verse": 4,
+          "arabic": "وَلَلْـَٔاخِرَةُ خَيْرٌ لَّكَ مِنَ ٱلْأُولَىٰ",
+          "translation": "And the next life is certainly far better for you than this one.",
+          "qcfV2": [
+            {
+              "page": 596,
+              "text": "ﲅ ﲆ ﲇ ﲈ ﲉ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "93:5",
+      "surahName": "Ad-Duhaa",
+      "verses": [
+        {
+          "verse": 5,
+          "arabic": "وَلَسَوْفَ يُعْطِيكَ رَبُّكَ فَتَرْضَىٰٓ",
+          "translation": "And ˹surely˺ your Lord will give so much to you that you will be pleased.",
+          "qcfV2": [
+            {
+              "page": 596,
+              "text": "ﲋ ﲌ ﲍ ﲎ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "94:1",
+      "surahName": "Ash-Sharh",
+      "verses": [
+        {
+          "verse": 1,
+          "arabic": "بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ أَلَمْ نَشْرَحْ لَكَ صَدْرَكَ",
+          "translation": "Have We not uplifted your heart for you ˹O Prophet˺,",
+          "qcfV2": [
+            {
+              "page": 596,
+              "text": "ﲬ ﲭ ﲮ ﲯ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "94:5",
+      "surahName": "Ash-Sharh",
+      "verses": [
+        {
+          "verse": 5,
+          "arabic": "فَإِنَّ مَعَ ٱلْعُسْرِ يُسْرًا",
+          "translation": "So, surely with hardship comes ease.",
+          "qcfV2": [
+            {
+              "page": 597,
+              "text": "ﱉ ﱊ ﱋ ﱌ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "94:6",
+      "surahName": "Ash-Sharh",
+      "verses": [
+        {
+          "verse": 6,
+          "arabic": "إِنَّ مَعَ ٱلْعُسْرِ يُسْرًا",
+          "translation": "Surely with ˹that˺ hardship comes ˹more˺ ease.",
+          "qcfV2": [
+            {
+              "page": 597,
+              "text": "ﱎ ﱏ ﱐ ﱑ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "95:4",
+      "surahName": "At-Tin",
+      "verses": [
+        {
+          "verse": 4,
+          "arabic": "لَقَدْ خَلَقْنَا ٱلْإِنسَٰنَ فِىٓ أَحْسَنِ تَقْوِيمٍ",
+          "translation": "Indeed, We created humans in the best form.",
+          "qcfV2": [
+            {
+              "page": 597,
+              "text": "ﱥ ﱦ ﱧ ﱨ ﱩ ﱪ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "99:7",
+      "surahName": "Az-Zalzalah",
+      "verses": [
+        {
+          "verse": 7,
+          "arabic": "فَمَن يَعْمَلْ مِثْقَالَ ذَرَّةٍ خَيْرًا يَرَهُۥ",
+          "translation": "So whoever does an atom’s weight of good will see it.",
+          "qcfV2": [
+            {
+              "page": 599,
+              "text": "ﲓ ﲔ ﲕ ﲖ ﲗ ﲘ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "99:8",
+      "surahName": "Az-Zalzalah",
+      "verses": [
+        {
+          "verse": 8,
+          "arabic": "وَمَن يَعْمَلْ مِثْقَالَ ذَرَّةٍ شَرًّا يَرَهُۥ",
+          "translation": "And whoever does an atom’s weight of evil will see it.",
+          "qcfV2": [
+            {
+              "page": 599,
+              "text": "ﲚ ﲛ ﲜ ﲝ ﲞ ﲟ"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

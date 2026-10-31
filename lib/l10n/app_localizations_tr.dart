@@ -772,6 +772,12 @@ class AppLocalizationsTr extends AppLocalizations {
   String get showWallpaperCredits => 'Duvar kağıdı kaynak bilgisini göster';
 
   @override
+  String get panels => 'Panels';
+
+  @override
+  String get showDailyAyah => 'Show ayah of the day';
+
+  @override
   String get calendar => 'Calendar';
 
   @override

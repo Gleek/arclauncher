@@ -10,6 +10,8 @@ This fork is based on upstream Arc Launcher 1.2.0 and adds:
   caches the last successful feed privately on the device, and supports recurring,
   rescheduled, cancelled, and all-day events. Google Calendar's secret iCal address
   works here; a calendar webpage URL does not. The URL is masked in settings.
+- **Settings → Interface → Panels:** show or hide a daily Quran ayah, with
+  100 bundled passages, English translations, and matching QCF V2 Arabic fonts.
 - **Settings → Interface → Wallpaper → Show wallpaper credits.**
 - **Settings → System → Date and time format → Fri 30 Oct.**
 

@@ -1,0 +1,12 @@
+King Fahd Glorious Quran Printing Complex (KFGQPC)
+Quran Complex Font V2 (QCF V2), based on the 1423H Madani Mushaf.
+
+Font name-table copyright notice: Test Font, KFGQPC
+Font files are bundled without modification.
+
+Source: https://verses.quran.foundation/fonts/quran/hafs/v2/ttf/p{page}.ttf
+Documentation: https://qul.tarteel.ai/docs/glyph-based
+Glyph data: Quran.com API v4, word_fields=code_v2
+
+Each font must be used with its matching Mushaf page glyph codes.
+Unicode Arabic is retained separately in daily_ayahs.json for accessibility.

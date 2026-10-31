@@ -34,6 +34,14 @@ void main() async {
     await sharedPreferences.clear();
   });
 
+  test('daily ayah visibility defaults on and persists when disabled', () async {
+    expect(settingsService.showDailyAyah, isTrue);
+    await settingsService.setShowDailyAyah(false);
+    expect(SettingsService(sharedPreferences).showDailyAyah, isFalse);
+    await settingsService.setShowDailyAyah(true);
+    expect(SettingsService(sharedPreferences).showDailyAyah, isTrue);
+  });
+
   test("watchNextBigPictureMode default and update", () async {
     final sharedPreferences = await SharedPreferences.getInstance();
     final settingsService = SettingsService(sharedPreferences);

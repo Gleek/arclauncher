@@ -58,4 +58,5 @@ flutter:
   uses-material-design: true
   assets:
     - assets/
+    - assets/fonts/qcf_v2/
     - lib/l10n/

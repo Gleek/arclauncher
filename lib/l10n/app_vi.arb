@@ -236,6 +236,8 @@
   "brightnessSlotEvening": "18:00–22:00",
   "brightnessSlotNight": "22:00–6:00",
     "showWallpaperCredits": "Hiển thị nguồn hình nền",
+    "panels": "Bảng tiện ích",
+    "showDailyAyah": "Hiển thị câu Kinh Qur’an trong ngày",
     "calendar": "Calendar",
     "calendarShow": "Show calendar on Home",
     "calendarUrl": "iCal URL",

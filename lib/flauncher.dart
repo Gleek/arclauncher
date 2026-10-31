@@ -34,6 +34,7 @@ import 'package:flauncher/widgets/cached_blur_backdrop.dart';
 import 'package:flauncher/widgets/category_clean_row.dart';
 import 'package:flauncher/widgets/category_row.dart';
 import 'package:flauncher/widgets/calendar_panel.dart';
+import 'package:flauncher/widgets/daily_ayah_panel.dart';
 import 'package:flauncher/widgets/dock_contour_painter.dart';
 import 'package:flauncher/widgets/launcher_alternative_view.dart';
 import 'package:flauncher/widgets/focus_aware_app_bar.dart';
@@ -279,9 +280,10 @@ class _FLauncherState extends State<FLauncher> with WidgetsBindingObserver {
     final watchNextBigPicture = context.select<SettingsService, bool>((s) => s.watchNextBigPictureMode);
     final watchNextVisible = context.select<WatchNextService, bool>((s) => s.hasVisibleSection);
     final reserveWatchNextSpace = showWatchNextSection && watchNextVisible;
+    final showAyah = context.select<SettingsService, bool>((s) => s.showDailyAyah);
     final showCalendar = context.select<SettingsService, bool>((s) => s.calendarEnabled && s.calendarUrl.isNotEmpty);
 
-    if (favoriteApps.isEmpty && otherSections.isEmpty && !showCalendar) return _emptyState(context);
+    if (favoriteApps.isEmpty && otherSections.isEmpty && !showCalendar && !showAyah) return _emptyState(context);
 
     final watchNextSpace = watchNextBigPicture ? 385 : 410;
 
@@ -289,6 +291,7 @@ class _FLauncherState extends State<FLauncher> with WidgetsBindingObserver {
       controller: _scrollController,
       slivers: [
         if (showCalendar) const SliverToBoxAdapter(child: CalendarPanel()),
+        if (showAyah) SliverToBoxAdapter(child: DailyAyahPanel(onFocused: _onHomeSectionFocused)),
         if (favoriteApps.isNotEmpty || showWatchNextSection) ...[
           SliverToBoxAdapter(
             child: SizedBox(
@@ -297,7 +300,8 @@ class _FLauncherState extends State<FLauncher> with WidgetsBindingObserver {
                   MediaQuery.of(context).padding.top -
                   kToolbarHeight -
                   (reserveWatchNextSpace ? watchNextSpace : 150) -
-                  (showCalendar ? CalendarPanel.height : 0)).clamp(0.0, double.infinity),
+                  (showCalendar ? CalendarPanel.height : 0) -
+                  (showAyah ? DailyAyahPanel.height : 0)).clamp(0.0, double.infinity),
             ),
           ),
           if (showWatchNextSection)
@@ -321,7 +325,7 @@ class _FLauncherState extends State<FLauncher> with WidgetsBindingObserver {
                     favoritesCategory!,
                     favoriteApps,
                     appsService,
-                    handleUpNavigationToSettings: !reserveWatchNextSpace,
+                    handleUpNavigationToSettings: !showAyah && !reserveWatchNextSpace,
                   ),
                 ),
               ),
@@ -329,7 +333,7 @@ class _FLauncherState extends State<FLauncher> with WidgetsBindingObserver {
         ],
         ..._buildSectionSlivers(
           otherSections,
-          firstCategoryAlreadyFound: favoriteApps.isNotEmpty,
+          firstCategoryAlreadyFound: showAyah || favoriteApps.isNotEmpty,
           showAppNames: showAppNames,
           onFirstSectionFocused: favoriteApps.isNotEmpty ? _scrollDockToTop : null,
         ),

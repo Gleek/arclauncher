@@ -1518,6 +1518,18 @@ abstract class AppLocalizations {
   /// **'Show wallpaper credits'**
   String get showWallpaperCredits;
 
+  /// No description provided for @panels.
+  ///
+  /// In en, this message translates to:
+  /// **'Panels'**
+  String get panels;
+
+  /// No description provided for @showDailyAyah.
+  ///
+  /// In en, this message translates to:
+  /// **'Show ayah of the day'**
+  String get showDailyAyah;
+
   /// No description provided for @calendar.
   ///
   /// In en, this message translates to:

@@ -1802,6 +1802,13 @@ class MockSettingsService extends _i1.Mock implements _i18.SettingsService {
       ) as bool);
 
   @override
+  bool get showDailyAyah => (super.noSuchMethod(
+        Invocation.getter(#showDailyAyah),
+        returnValue: false,
+        returnValueForMissingStub: false,
+      ) as bool);
+
+  @override
   bool get showWatchNextSection => (super.noSuchMethod(
         Invocation.getter(#showWatchNextSection),
         returnValue: false,
@@ -2018,6 +2025,16 @@ class MockSettingsService extends _i1.Mock implements _i18.SettingsService {
         returnValue: false,
         returnValueForMissingStub: false,
       ) as bool);
+
+  @override
+  _i9.Future<void> setShowDailyAyah(bool? value) => (super.noSuchMethod(
+        Invocation.method(
+          #setShowDailyAyah,
+          [value],
+        ),
+        returnValue: _i9.Future<void>.value(),
+        returnValueForMissingStub: _i9.Future<void>.value(),
+      ) as _i9.Future<void>);
 
   @override
   _i9.Future<void> setFocusBorderThickness(double? value) =>
