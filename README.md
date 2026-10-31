@@ -10,10 +10,57 @@ This fork is based on upstream Arc Launcher 1.2.0 and adds:
   caches the last successful feed privately on the device, and supports recurring,
   rescheduled, cancelled, and all-day events. Google Calendar's secret iCal address
   works here; a calendar webpage URL does not. The URL is masked in settings.
+- **Settings → Interface → Wallpaper → Wallhaven wallpaper:** enter comma-separated
+  search terms such as `nature, mountains, ocean`. No account or API key is needed.
+  Each rotation picks a random term and a random wallpaper, using safe-for-work,
+  general-category images in 16:9 at 1920×1080 or higher. Choose an interval or
+  select **Next wallpaper**. The last image stays available offline. Wallhaven,
+  Unsplash, Reddit, and Gist are mutually exclusive wallpaper sources.
 - **Settings → Interface → Panels:** show or hide a daily Quran ayah, with
   100 bundled passages, English translations, and matching QCF V2 Arabic fonts.
 - **Settings → Interface → Wallpaper → Show wallpaper credits.**
 - **Settings → System → Date and time format → Fri 30 Oct.**
+
+Gist content can be updated independently of the APK:
+
+- **Wallpaper → Gist wallpapers:** enable it and pick a rotation interval. **Refresh content** reloads the list; **Next wallpaper**
+  downloads a random entry. Videos loop silently. Both images and videos are
+  downloaded privately on the TV, with the current and previous files cached.
+- **Interface → Panels → Refresh ayahs:** reload the ayah JSON immediately.
+  Bundled ayahs remain the fallback before any valid feed is cached. Invalid
+  updates or network failures retain the current feed.
+
+The wallpaper Gist is a plain text file containing direct media URLs, one per
+line. It contains links, rather than the media files themselves:
+
+```text
+# My wallpaper collection
+https://example.com/forest.jpg
+https://example.com/ocean.mp4
+```
+
+Use HTTPS links to the image/video itself, rather than a website's viewing page.
+Blank lines and `#` comments are ignored. The response content type determines
+whether an entry is an image or video, so extensionless download URLs also work.
+Use 1080p H.264 MP4 for broad TV compatibility.
+
+For the ayah Gist, upload [assets/daily_ayahs.json](assets/daily_ayahs.json) as a
+starting point and retain its source credits. Each passage has `reference`,
+`surahName`, and a `verses` list. Each verse needs `arabic` and `translation`.
+`qcfV2` glyph runs are optional; each has a Mushaf `page` (1–604) and `text`.
+New QCF page fonts are downloaded and cached when needed. Without glyph data or
+when a font is unavailable, the Arabic text uses the system font.
+
+Both feeds load on startup and have independent refresh buttons and offline
+caches. Their two fixed URLs live in [lib/content_sources.dart](lib/content_sources.dart).
+There are no URL settings in the TV UI. Once the public Gists are set up, edit
+their contents and use Refresh; no APK update is needed for content changes.
+Public Gist page URLs or raw URLs work. Prefer one file per Gist, or use
+`https://gist.github.com/USER/ID?file=wallpapers.txt` to select a file. Raw Gist
+links pinned to a revision automatically follow the latest edit.
+
+Current public feeds: [wallpapers](https://gist.github.com/Gleek/bbfb6b34507cfec95c15a061f62b279b)
+and [daily ayahs](https://gist.github.com/Gleek/4accae77b24587cedfe644637c6f7a58).
 
 The GitHub build uses `com.omeda.arc.custom`, so it can coexist with the official
 app. Updating this custom app with the same signing key and `adb install -r`

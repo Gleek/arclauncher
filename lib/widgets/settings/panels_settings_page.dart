@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import 'calendar_panel_page.dart';
+import 'feed_refresh_tile.dart';
+import '../../providers/remote_feed.dart';
 import 'focusable_settings_tile.dart';
 import 'settings_theme.dart';
 
@@ -17,6 +19,7 @@ class PanelsSettingsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final strings = AppLocalizations.of(context)!;
     final settings = context.watch<SettingsService>();
+    final ayahs = context.watch<AyahFeed?>();
     return Column(
       children: [
         SettingsPageHeader(title: strings.panels),
@@ -33,6 +36,7 @@ class PanelsSettingsPage extends StatelessWidget {
                 ),
                 secondary: const Icon(Icons.auto_stories_outlined),
               ),
+              if (ayahs != null) FeedRefreshTile(feed: ayahs, title: strings.refreshAyahs),
               FocusableSettingsTile(
                 showChevron: true,
                 leading: const Icon(Icons.calendar_today_outlined),

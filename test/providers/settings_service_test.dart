@@ -42,6 +42,49 @@ void main() async {
     expect(SettingsService(sharedPreferences).showDailyAyah, isTrue);
   });
 
+  test('Gist source persists its interval and switches off other wallpaper sources', () async {
+    await settingsService.setGistIntervalMinutes(30);
+    await settingsService.setWallhavenWallpaperEnabled(true);
+    await settingsService.setGistWallpaperEnabled(true);
+    expect(settingsService.wallhavenWallpaperEnabled, isFalse);
+    expect(settingsService.unsplashSlideshowEnabled, isFalse);
+    expect(settingsService.redditWallpaperEnabled, isFalse);
+    final restored = SettingsService(sharedPreferences);
+    expect(restored.gistWallpaperEnabled, isTrue);
+    expect(restored.gistIntervalMinutes, 30);
+    await settingsService.setRedditWallpaperEnabled(true);
+    expect(settingsService.gistWallpaperEnabled, isFalse);
+    await settingsService.setGistWallpaperEnabled(true);
+    await settingsService.setUnsplashSlideshowEnabled(true);
+    expect(settingsService.gistWallpaperEnabled, isFalse);
+  });
+
+  test("Wallhaven settings persist, normalize terms and disable competing sources", () async {
+    expect(settingsService.wallhavenWallpaperEnabled, isFalse);
+    await settingsService.setWallhavenSearchTerms(' mountains, , ocean, mountains ');
+    await settingsService.setWallhavenIntervalMinutes(30);
+    await settingsService.setUnsplashAccessKey('unsplash');
+    await settingsService.setUnsplashSlideshowEnabled(true);
+    await settingsService.setWallhavenWallpaperEnabled(true);
+    final restored = SettingsService(sharedPreferences);
+    expect(restored.wallhavenSearchTerms, 'mountains, ocean');
+    expect(restored.wallhavenIntervalMinutes, 30);
+    expect(restored.wallhavenWallpaperEnabled, isTrue);
+    expect(restored.unsplashSlideshowEnabled, isFalse);
+    expect(restored.redditWallpaperEnabled, isFalse);
+    await settingsService.setRedditWallpaperEnabled(true);
+    expect(settingsService.wallhavenWallpaperEnabled, isFalse);
+    await settingsService.setWallhavenWallpaperEnabled(true);
+    expect(settingsService.redditWallpaperEnabled, isFalse);
+    await settingsService.setUnsplashSlideshowEnabled(true);
+    expect(settingsService.wallhavenWallpaperEnabled, isFalse);
+    await settingsService.setWallhavenWallpaperEnabled(true);
+    await settingsService.setWallhavenSearchTerms(' , ');
+    expect(settingsService.wallhavenWallpaperEnabled, isFalse);
+    await settingsService.setWallhavenSearchTerms('nature');
+    expect(settingsService.wallhavenWallpaperEnabled, isFalse);
+  });
+
   test("watchNextBigPictureMode default and update", () async {
     final sharedPreferences = await SharedPreferences.getInstance();
     final settingsService = SettingsService(sharedPreferences);

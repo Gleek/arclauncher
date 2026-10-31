@@ -17,11 +17,11 @@
  */
 
 import 'dart:io';
-import 'dart:typed_data';
 
 import 'package:flauncher/gradients.dart';
 import 'package:flauncher/providers/wallpaper_service.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter/painting.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:path_provider_platform_interface/path_provider_platform_interface.dart';
@@ -65,6 +65,63 @@ void main() {
     pathProviderPlatform = _MockPathProviderPlatform();
     when(pathProviderPlatform.getApplicationDocumentsPath()).thenAnswer((_) => Future.value("."));
     PathProviderPlatform.instance = pathProviderPlatform;
+  });
+
+  test('Gist restores cached videos and switching to a local image disables it', () async {
+    TestWidgetsFlutterBinding.ensureInitialized();
+    final dir = await Directory.systemTemp.createTemp('gist_wallpaper_service');
+    when(pathProviderPlatform.getApplicationDocumentsPath()).thenAnswer((_) async => dir.path);
+    final cache = await Directory('${dir.path}/gist_slideshow').create();
+    final video = await File('${cache.path}/video.mp4').writeAsBytes([1, 2, 3]);
+    final image = await File('${dir.path}/source.jpg').writeAsBytes([1, 2, 3]);
+    final settings = _createSettingsService();
+    when(settings.gistWallpaperEnabled).thenReturn(true);
+    when(settings.gistIntervalMinutes).thenReturn(10);
+    when(settings.setGistWallpaperEnabled(false)).thenAnswer((_) async {
+      when(settings.gistWallpaperEnabled).thenReturn(false);
+    });
+    final service = WallpaperService(settings);
+    addTearDown(() async {
+      service.dispose();
+      await dir.delete(recursive: true);
+      when(pathProviderPlatform.getApplicationDocumentsPath()).thenAnswer((_) async => '.');
+    });
+    await Future<void>.delayed(Duration.zero);
+    expect(service.wallpaperVideoFile!.path, video.path);
+    expect(service.wallpaper, isNull);
+    await service.pickWallpaper(image);
+    verify(settings.setGistWallpaperEnabled(false)).called(1);
+    expect(service.wallpaperVideoFile, isNull);
+    expect((service.wallpaper as FileImage).file.path, '${dir.path}/wallpaper');
+  });
+
+  test("Wallhaven restores cached wallpaper and credit; manual selection disables it", () async {
+    TestWidgetsFlutterBinding.ensureInitialized();
+    final dir = await Directory.systemTemp.createTemp('wallhaven_wallpaper_service');
+    when(pathProviderPlatform.getApplicationDocumentsPath()).thenAnswer((_) async => dir.path);
+    final cache = await Directory('${dir.path}/wallhaven_slideshow').create();
+    final cached = await File('${cache.path}/photo.png').writeAsBytes([1, 2, 3]);
+    final settings = _createSettingsService();
+    when(settings.wallhavenWallpaperEnabled).thenReturn(true);
+    when(settings.wallhavenIntervalMinutes).thenReturn(10);
+    when(settings.wallhavenSearchTerms).thenReturn('nature');
+    when(settings.wallhavenWallpaperId).thenReturn('abc123');
+    when(settings.setWallhavenWallpaperEnabled(false)).thenAnswer((_) async {
+      when(settings.wallhavenWallpaperEnabled).thenReturn(false);
+    });
+    final service = WallpaperService(settings);
+    addTearDown(() async {
+      service.dispose();
+      await dir.delete(recursive: true);
+      when(pathProviderPlatform.getApplicationDocumentsPath()).thenAnswer((_) async => '.');
+    });
+    await Future<void>.delayed(Duration.zero);
+    expect((service.wallpaper as FileImage).file.path, cached.path);
+    expect(service.wallhavenWallpaperCredit, 'Wallhaven / abc123');
+    await service.pickWallpaper(cached);
+    verify(settings.setWallhavenWallpaperEnabled(false)).called(1);
+    expect(service.wallhavenWallpaperCredit, isNull);
+    expect((service.wallpaper as FileImage).file.path, '${dir.path}/wallpaper');
   });
 
   test("pickWallpaper saves source file", () async {

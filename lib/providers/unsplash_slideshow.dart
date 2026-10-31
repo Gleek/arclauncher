@@ -20,7 +20,6 @@ import 'dart:convert';
 import 'dart:io';
 import 'dart:math';
 
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
@@ -123,14 +122,19 @@ class UnsplashSlideshow {
 }
 
 /// Deletes all but the [keep] most recent files in [dir], plus leftover temp files.
-Future<void> pruneCache(Directory dir, {required int keep}) async {
+Future<void> pruneCache(Directory dir, {required int keep, File? newest}) async {
   if (!await dir.exists()) return;
   final files = await dir.list().where((e) => e is File).cast<File>().toList();
   for (final f in files.where((f) => f.path.endsWith('.part'))) {
     await f.delete();
   }
   final images = files.where((f) => !f.path.endsWith('.part')).toList()
-    ..sort((a, b) => b.lastModifiedSync().compareTo(a.lastModifiedSync()));
+    ..sort((a, b) {
+      // Filesystems can give consecutive downloads identical modification times.
+      if (a.path == newest?.path) return -1;
+      if (b.path == newest?.path) return 1;
+      return b.lastModifiedSync().compareTo(a.lastModifiedSync());
+    });
   for (final f in images.skip(keep)) {
     await f.delete();
   }
@@ -139,7 +143,7 @@ Future<void> pruneCache(Directory dir, {required int keep}) async {
 /// Newest cached image, shown at startup before (or without) network access.
 File? newestCachedImage(Directory dir) {
   if (!dir.existsSync()) return null;
-  final images = dir.listSync().whereType<File>().where((f) => f.path.endsWith('.jpg')).toList()
+  final images = dir.listSync().whereType<File>().where((f) => f.path.endsWith('.jpg') || f.path.endsWith('.png')).toList()
     ..sort((a, b) => b.lastModifiedSync().compareTo(a.lastModifiedSync()));
   return images.isEmpty ? null : images.first;
 }

@@ -22,6 +22,7 @@ import 'package:flauncher/database.dart';
 import 'package:flauncher/flauncher_channel.dart';
 import 'package:flauncher/providers/apps_service.dart';
 import 'package:flauncher/providers/calendar_service.dart';
+import 'package:flauncher/providers/remote_feed.dart';
 import 'package:flauncher/providers/launcher_state.dart';
 import 'package:flauncher/providers/network_service.dart';
 import 'package:flauncher/providers/settings_service.dart';
@@ -51,6 +52,10 @@ Future<void> main() async {
         ChangeNotifierProvider(create: (_) => AppsService(fLauncherChannel, fLauncherDatabase)),
         ChangeNotifierProvider(
           create: (context) => CalendarService(context.read<SettingsService>()),
+          lazy: false,
+        ),
+        ChangeNotifierProvider(
+          create: (_) => AyahFeed(),
           lazy: false,
         ),
         ChangeNotifierProvider(create: (_) => LauncherState()),

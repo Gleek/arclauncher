@@ -318,6 +318,56 @@ class SettingsService extends ChangeNotifier {
     notifyListeners();
   }
 
+  bool get gistWallpaperEnabled => _sharedPreferences.getBool('gist_wallpaper_enabled') ?? false;
+  int get gistIntervalMinutes => _sharedPreferences.getInt('gist_interval_minutes') ?? 10;
+
+  Future<void> setGistIntervalMinutes(int minutes) async {
+    if (!redditIntervalChoices.contains(minutes)) return;
+    await _sharedPreferences.setInt('gist_interval_minutes', minutes);
+    notifyListeners();
+  }
+
+  Future<void> setGistWallpaperEnabled(bool enabled) async {
+    await _sharedPreferences.setBool('gist_wallpaper_enabled', enabled);
+    if (enabled) {
+      await _sharedPreferences.setBool('wallhaven_wallpaper_enabled', false);
+      await _sharedPreferences.setBool('unsplash_slideshow_enabled', false);
+      await _sharedPreferences.setBool('reddit_wallpaper_enabled', false);
+    }
+    notifyListeners();
+  }
+
+  String get wallhavenSearchTerms => _sharedPreferences.getString('wallhaven_search_terms') ?? 'nature, mountains, ocean';
+  bool get wallhavenWallpaperEnabled => wallhavenSearchTerms.split(',').any((term) => term.trim().isNotEmpty) &&
+      (_sharedPreferences.getBool('wallhaven_wallpaper_enabled') ?? false);
+  int get wallhavenIntervalMinutes => _sharedPreferences.getInt('wallhaven_interval_minutes') ?? 10;
+  String? get wallhavenWallpaperId => _sharedPreferences.getString('wallhaven_wallpaper_id');
+
+  Future<void> setWallhavenSearchTerms(String terms) async {
+    final cleaned = terms.split(',').map((term) => term.trim()).where((term) => term.isNotEmpty).toSet().join(', ');
+    await _sharedPreferences.setString('wallhaven_search_terms', cleaned);
+    if (cleaned.isEmpty) await _sharedPreferences.setBool('wallhaven_wallpaper_enabled', false);
+    notifyListeners();
+  }
+
+  Future<void> setWallhavenIntervalMinutes(int minutes) async {
+    if (!redditIntervalChoices.contains(minutes)) return;
+    await _sharedPreferences.setInt('wallhaven_interval_minutes', minutes);
+    notifyListeners();
+  }
+
+  Future<void> setWallhavenWallpaperEnabled(bool enabled) async {
+    await _sharedPreferences.setBool('wallhaven_wallpaper_enabled', enabled);
+    if (enabled) {
+      await _sharedPreferences.setBool('gist_wallpaper_enabled', false);
+      await _sharedPreferences.setBool('unsplash_slideshow_enabled', false);
+      await _sharedPreferences.setBool('reddit_wallpaper_enabled', false);
+    }
+    notifyListeners();
+  }
+
+  Future<void> setWallhavenWallpaperId(String id) => _sharedPreferences.setString('wallhaven_wallpaper_id', id);
+
   /// Each user brings their own Unsplash API access key (Demo apps are limited to 50 requests/hour).
   String get unsplashAccessKey => _sharedPreferences.getString("unsplash_access_key") ?? "";
 
@@ -358,6 +408,8 @@ class SettingsService extends ChangeNotifier {
   Future<void> setUnsplashSlideshowEnabled(bool enabled) async {
     await _sharedPreferences.setBool("unsplash_slideshow_enabled", enabled);
     if (enabled) {
+      await _sharedPreferences.setBool('gist_wallpaper_enabled', false);
+      await _sharedPreferences.setBool("wallhaven_wallpaper_enabled", false);
       await _sharedPreferences.setBool("reddit_wallpaper_enabled", false);
     }
     notifyListeners();
@@ -395,6 +447,8 @@ class SettingsService extends ChangeNotifier {
   Future<void> setRedditWallpaperEnabled(bool enabled) async {
     await _sharedPreferences.setBool("reddit_wallpaper_enabled", enabled);
     if (enabled) {
+      await _sharedPreferences.setBool('gist_wallpaper_enabled', false);
+      await _sharedPreferences.setBool("wallhaven_wallpaper_enabled", false);
       await _sharedPreferences.setBool("unsplash_slideshow_enabled", false);
     }
     notifyListeners();

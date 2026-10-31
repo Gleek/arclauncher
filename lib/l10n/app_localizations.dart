@@ -1631,6 +1631,96 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Continues'**
   String get calendarContinues;
+
+  /// No description provided for @wallhavenWallpaper.
+  ///
+  /// In en, this message translates to:
+  /// **'Wallhaven wallpaper'**
+  String get wallhavenWallpaper;
+
+  /// No description provided for @wallhavenEnable.
+  ///
+  /// In en, this message translates to:
+  /// **'Show Wallhaven wallpapers'**
+  String get wallhavenEnable;
+
+  /// No description provided for @wallhavenSearchTerms.
+  ///
+  /// In en, this message translates to:
+  /// **'Search terms'**
+  String get wallhavenSearchTerms;
+
+  /// No description provided for @wallhavenSearchTermsHelp.
+  ///
+  /// In en, this message translates to:
+  /// **'Separate terms with commas, e.g. nature, mountains, ocean. Each change picks a random term, then a random landscape photo.'**
+  String get wallhavenSearchTermsHelp;
+
+  /// No description provided for @wallhavenNextWallpaper.
+  ///
+  /// In en, this message translates to:
+  /// **'Next wallpaper'**
+  String get wallhavenNextWallpaper;
+
+  /// No description provided for @wallhavenWallpaperFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'No wallpaper found. Check your search terms and connection.'**
+  String get wallhavenWallpaperFailed;
+
+  /// No description provided for @wallhavenAttribution.
+  ///
+  /// In en, this message translates to:
+  /// **'Wallpapers from Wallhaven · https://wallhaven.cc'**
+  String get wallhavenAttribution;
+
+  /// No description provided for @gistWallpaper.
+  ///
+  /// In en, this message translates to:
+  /// **'Gist wallpapers'**
+  String get gistWallpaper;
+
+  /// No description provided for @gistWallpaperEnable.
+  ///
+  /// In en, this message translates to:
+  /// **'Use wallpapers from Gist'**
+  String get gistWallpaperEnable;
+
+  /// No description provided for @gistWallpaperHelp.
+  ///
+  /// In en, this message translates to:
+  /// **'One direct HTTPS image or video URL per line. Blank lines and lines starting with # are ignored. Refresh reloads the list; Next wallpaper picks a random entry. Downloads are kept for offline playback.'**
+  String get gistWallpaperHelp;
+
+  /// No description provided for @gistWallpaperFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not download a wallpaper. Check the feed and media URLs.'**
+  String get gistWallpaperFailed;
+
+  /// No description provided for @feedRefresh.
+  ///
+  /// In en, this message translates to:
+  /// **'Refresh content'**
+  String get feedRefresh;
+
+  /// No description provided for @feedRefreshed.
+  ///
+  /// In en, this message translates to:
+  /// **'Content refreshed'**
+  String get feedRefreshed;
+
+  /// No description provided for @feedRefreshFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Refresh failed. Keeping the last working content.'**
+  String get feedRefreshFailed;
+
+  /// No description provided for @refreshAyahs.
+  ///
+  /// In en, this message translates to:
+  /// **'Refresh ayahs'**
+  String get refreshAyahs;
 }
 
 class _AppLocalizationsDelegate

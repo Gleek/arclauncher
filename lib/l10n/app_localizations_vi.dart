@@ -833,4 +833,55 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get calendarContinues => 'Continues';
+
+  @override
+  String get wallhavenWallpaper => 'Hình nền Wallhaven';
+
+  @override
+  String get wallhavenEnable => 'Hiển thị hình nền Wallhaven';
+
+  @override
+  String get wallhavenSearchTerms => 'Từ khóa tìm kiếm';
+
+  @override
+  String get wallhavenSearchTermsHelp =>
+      'Ngăn cách các từ khóa bằng dấu phẩy, ví dụ: nature, mountains, ocean. Mỗi lần đổi hình nền sẽ chọn ngẫu nhiên một từ khóa, rồi chọn một hình nền ngang ngẫu nhiên.';
+
+  @override
+  String get wallhavenNextWallpaper => 'Hình nền tiếp theo';
+
+  @override
+  String get wallhavenWallpaperFailed =>
+      'Không tìm thấy hình nền. Hãy kiểm tra từ khóa tìm kiếm và kết nối.';
+
+  @override
+  String get wallhavenAttribution =>
+      'Hình nền từ Wallhaven · https://wallhaven.cc';
+
+  @override
+  String get gistWallpaper => 'Hình nền từ Gist';
+
+  @override
+  String get gistWallpaperEnable => 'Sử dụng hình nền từ Gist';
+
+  @override
+  String get gistWallpaperHelp =>
+      'Mỗi dòng chứa một URL HTTPS trực tiếp tới hình ảnh hoặc video. Các dòng trống và dòng bắt đầu bằng # sẽ bị bỏ qua. Làm mới để tải lại danh sách; Hình nền tiếp theo chọn ngẫu nhiên một mục. Các tệp tải xuống được lưu để phát khi ngoại tuyến.';
+
+  @override
+  String get gistWallpaperFailed =>
+      'Không thể tải hình nền. Hãy kiểm tra URL nguồn và URL ảnh hoặc video.';
+
+  @override
+  String get feedRefresh => 'Làm mới nội dung';
+
+  @override
+  String get feedRefreshed => 'Đã làm mới nội dung';
+
+  @override
+  String get feedRefreshFailed =>
+      'Làm mới thất bại. Tiếp tục sử dụng nội dung gần nhất hoạt động.';
+
+  @override
+  String get refreshAyahs => 'Làm mới các câu Kinh Qur’an';
 }

@@ -22,6 +22,8 @@ import 'package:flauncher/providers/settings_service.dart';
 import 'package:flauncher/providers/wallpaper_service.dart';
 import 'package:flauncher/widgets/settings/focusable_settings_tile.dart';
 import 'package:flauncher/widgets/settings/gradient_panel_page.dart';
+import 'package:flauncher/widgets/settings/wallhaven_wallpaper_panel_page.dart';
+import 'package:flauncher/widgets/settings/gist_wallpaper_panel_page.dart';
 import 'package:flauncher/widgets/settings/reddit_wallpaper_panel_page.dart';
 import 'package:flauncher/widgets/settings/unsplash_slideshow_panel_page.dart';
 import 'package:flauncher/widgets/tv_media_picker.dart';
@@ -126,6 +128,16 @@ class WallpaperPanelPage extends StatelessWidget {
                 leading: const Icon(Icons.slideshow),
                 title: Text(localizations.unsplashSlideshow),
                 onPressed: () => Navigator.of(context).pushNamed(UnsplashSlideshowPanelPage.routeName),
+              ),
+              FocusableSettingsTile(
+                leading: const Icon(Icons.cloud_outlined),
+                title: Text(localizations.gistWallpaper),
+                onPressed: () => Navigator.of(context).pushNamed(GistWallpaperPanelPage.routeName),
+              ),
+              FocusableSettingsTile(
+                leading: const Icon(Icons.wallpaper),
+                title: Text(localizations.wallhavenWallpaper),
+                onPressed: () => Navigator.of(context).pushNamed(WallhavenWallpaperPanelPage.routeName),
               ),
               FocusableSettingsTile(
                 leading: const Icon(Icons.photo_library_outlined),

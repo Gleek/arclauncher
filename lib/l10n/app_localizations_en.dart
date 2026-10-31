@@ -827,4 +827,55 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get calendarContinues => 'Continues';
+
+  @override
+  String get wallhavenWallpaper => 'Wallhaven wallpaper';
+
+  @override
+  String get wallhavenEnable => 'Show Wallhaven wallpapers';
+
+  @override
+  String get wallhavenSearchTerms => 'Search terms';
+
+  @override
+  String get wallhavenSearchTermsHelp =>
+      'Separate terms with commas, e.g. nature, mountains, ocean. Each change picks a random term, then a random landscape photo.';
+
+  @override
+  String get wallhavenNextWallpaper => 'Next wallpaper';
+
+  @override
+  String get wallhavenWallpaperFailed =>
+      'No wallpaper found. Check your search terms and connection.';
+
+  @override
+  String get wallhavenAttribution =>
+      'Wallpapers from Wallhaven · https://wallhaven.cc';
+
+  @override
+  String get gistWallpaper => 'Gist wallpapers';
+
+  @override
+  String get gistWallpaperEnable => 'Use wallpapers from Gist';
+
+  @override
+  String get gistWallpaperHelp =>
+      'One direct HTTPS image or video URL per line. Blank lines and lines starting with # are ignored. Refresh reloads the list; Next wallpaper picks a random entry. Downloads are kept for offline playback.';
+
+  @override
+  String get gistWallpaperFailed =>
+      'Could not download a wallpaper. Check the feed and media URLs.';
+
+  @override
+  String get feedRefresh => 'Refresh content';
+
+  @override
+  String get feedRefreshed => 'Content refreshed';
+
+  @override
+  String get feedRefreshFailed =>
+      'Refresh failed. Keeping the last working content.';
+
+  @override
+  String get refreshAyahs => 'Refresh ayahs';
 }

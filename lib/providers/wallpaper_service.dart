@@ -24,6 +24,9 @@ import 'dart:typed_data';
 import 'package:flauncher/flauncher_channel.dart';
 import 'package:flauncher/gradients.dart';
 import 'package:flauncher/providers/reddit_slideshow.dart';
+import 'package:flauncher/providers/remote_feed.dart';
+import 'package:flauncher/providers/gist_slideshow.dart';
+import 'package:flauncher/providers/wallhaven_slideshow.dart';
 import 'package:flauncher/providers/settings_service.dart';
 import 'package:flauncher/providers/unsplash_slideshow.dart';
 import 'package:flutter/cupertino.dart';
@@ -52,6 +55,35 @@ class WallpaperService extends ChangeNotifier {
   Timer? _redditTimer;
   Timer? _redditDebounce;
   File? _redditFile;
+
+  late WallhavenSlideshow _wallhavenSlideshow;
+  Timer? _wallhavenTimer;
+  File? _wallhavenFile;
+  bool _wallhavenLoading = false;
+  bool _disposed = false;
+  (bool, int, String) _lastWallhavenConfig = (false, 0, '');
+  (bool, int, String) get _wallhavenConfig => (
+    _settingsService.wallhavenWallpaperEnabled,
+    _settingsService.wallhavenIntervalMinutes,
+    _settingsService.wallhavenSearchTerms,
+  );
+
+  String? get wallhavenWallpaperCredit => _settingsService.wallhavenWallpaperEnabled && _wallhavenFile != null
+      ? 'Wallhaven / ${_settingsService.wallhavenWallpaperId ?? ""}'
+      : null;
+
+  final WallpaperFeed gistFeed;
+  late GistSlideshow _gistSlideshow;
+  GistWallpaper? _gistWallpaper;
+  Timer? _gistTimer;
+  bool _gistLoading = false;
+  bool _gistNeedsAdvance = false;
+  int _lastGistRevision = -1;
+  (bool, int) _lastGistConfig = (false, 0);
+  (bool, int) get _gistConfig => (
+    _settingsService.gistWallpaperEnabled,
+    _settingsService.gistIntervalMinutes,
+  );
 
   static const Duration redditConfigDebounce = Duration(seconds: 3);
 
@@ -91,7 +123,9 @@ class WallpaperService extends ChangeNotifier {
     orElse: () => FLauncherGradients.saintPetersburg,
   );
 
-  WallpaperService(this._settingsService) : _wallpaper = null {
+  WallpaperService(this._settingsService, {WallpaperFeed? feed})
+      : gistFeed = feed ?? WallpaperFeed(), _wallpaper = null {
+    gistFeed.addListener(_onGistFeedChanged);
     _settingsService.addListener(_onSettingsChanged);
     _init();
   }
@@ -117,6 +151,16 @@ class WallpaperService extends ChangeNotifier {
       _updateTimerState();
       _updateWallpaper();
     }
+    if (_initialized && _gistConfig != _lastGistConfig) {
+      _lastGistConfig = _gistConfig;
+      _updateGistState(refresh: true);
+      _updateWallpaper(force: true);
+    }
+    if (_initialized && _wallhavenConfig != _lastWallhavenConfig) {
+      _lastWallhavenConfig = _wallhavenConfig;
+      _updateWallhavenState(refresh: true);
+      _updateWallpaper(force: true);
+    }
     if (_initialized && _slideshowConfig != _lastSlideshowConfig) {
       _lastSlideshowConfig = _slideshowConfig;
       _updateSlideshowState();
@@ -138,6 +182,13 @@ class WallpaperService extends ChangeNotifier {
 
   @override
   void dispose() {
+    _disposed = true;
+    _gistTimer?.cancel();
+    gistFeed.removeListener(_onGistFeedChanged);
+    gistFeed.dispose();
+    if (_initialized) _gistSlideshow.dispose();
+    _wallhavenTimer?.cancel();
+    if (_initialized) _wallhavenSlideshow.dispose();
     _settingsService.removeListener(_onSettingsChanged);
     _timer?.cancel();
     _slideshowTimer?.cancel();
@@ -148,6 +199,7 @@ class WallpaperService extends ChangeNotifier {
 
   Future<void> _init() async {
     final directory = await getApplicationDocumentsDirectory();
+    if (_disposed) return;
     _wallpaperFile = File("${directory.path}/wallpaper");
     _wallpaperDayFile = File("${directory.path}/wallpaper_day");
     _wallpaperNightFile = File("${directory.path}/wallpaper_night");
@@ -158,6 +210,12 @@ class WallpaperService extends ChangeNotifier {
     _slideshowFile = newestCachedImage(_slideshow.cacheDir);
     _redditSlideshow = RedditSlideshow(Directory("${directory.path}/reddit_slideshow"));
     _redditFile = newestCachedImage(_redditSlideshow.cacheDir);
+    _wallhavenSlideshow = WallhavenSlideshow(Directory("${directory.path}/wallhaven_slideshow"));
+    _wallhavenFile = newestCachedImage(_wallhavenSlideshow.cacheDir);
+    _lastWallhavenConfig = _wallhavenConfig;
+    _gistSlideshow = GistSlideshow(Directory("${directory.path}/gist_slideshow"));
+    _gistWallpaper = _gistSlideshow.cached;
+    _lastGistConfig = _gistConfig;
     _initialized = true;
 
     _lastTimeBasedEnabled = _settingsService.timeBasedWallpaperEnabled;
@@ -167,6 +225,83 @@ class WallpaperService extends ChangeNotifier {
     _updateTimerState();
     _updateSlideshowState();
     _updateRedditState();
+    _updateWallhavenState();
+    _updateGistState();
+  }
+
+  void _onGistFeedChanged() {
+    if (!_initialized || gistFeed.revision == _lastGistRevision) return;
+    _lastGistRevision = gistFeed.revision;
+    if (_gistNeedsAdvance && gistFeed.value != null) advanceGistWallpaper();
+  }
+
+  void _updateGistState({bool refresh = false}) {
+    _gistTimer?.cancel();
+    _gistTimer = null;
+    if (!_settingsService.gistWallpaperEnabled) return;
+    final interval = Duration(minutes: _settingsService.gistIntervalMinutes);
+    _gistTimer = Timer.periodic(interval, (_) => advanceGistWallpaper());
+    final file = _gistWallpaper?.file;
+    if (refresh || file == null || DateTime.now().difference(file.lastModifiedSync()) >= interval) {
+      advanceGistWallpaper();
+    }
+  }
+
+  Future<bool> advanceGistWallpaper() async {
+    if (!_initialized || _disposed || _gistLoading || !_settingsService.gistWallpaperEnabled) return false;
+    final urls = gistFeed.value;
+    if (urls == null) {
+      _gistNeedsAdvance = true;
+      gistFeed.refresh(loadCache: true);
+      return false;
+    }
+    _gistNeedsAdvance = false;
+    _gistLoading = true;
+    final config = _gistConfig;
+    try {
+      final result = await _gistSlideshow.next(urls, random: _random);
+      if (result == null || _disposed || config != _gistConfig) return false;
+      _gistWallpaper = result;
+      _updateWallpaper(force: true);
+      return true;
+    } finally {
+      _gistLoading = false;
+      if (!_disposed && config != _gistConfig && _settingsService.gistWallpaperEnabled) advanceGistWallpaper();
+    }
+  }
+
+  void _updateWallhavenState({bool refresh = false}) {
+    _wallhavenTimer?.cancel();
+    _wallhavenTimer = null;
+    if (!_settingsService.wallhavenWallpaperEnabled) return;
+    final interval = Duration(minutes: _settingsService.wallhavenIntervalMinutes);
+    _wallhavenTimer = Timer.periodic(interval, (_) => advanceWallhavenWallpaper());
+    final file = _wallhavenFile;
+    if (refresh || file == null || DateTime.now().difference(file.lastModifiedSync()) >= interval) {
+      advanceWallhavenWallpaper();
+    }
+  }
+
+  Future<bool> advanceWallhavenWallpaper() async {
+    if (!_initialized || _disposed || _wallhavenLoading || !_settingsService.wallhavenWallpaperEnabled) return false;
+    _wallhavenLoading = true;
+    final config = _wallhavenConfig;
+    try {
+      final result = await _wallhavenSlideshow.next(config.$3, random: _random);
+      if (result == null || _disposed || config != _wallhavenConfig) return false;
+      final (file, id) = result;
+      _wallhavenFile = file;
+      await _settingsService.setWallhavenWallpaperId(id);
+      if (_disposed || config != _wallhavenConfig) return false;
+      _updateWallpaper(force: true);
+      return true;
+    } finally {
+      _wallhavenLoading = false;
+      // A settings edit during a download should apply the new search immediately.
+      if (!_disposed && config != _wallhavenConfig && _settingsService.wallhavenWallpaperEnabled) {
+        advanceWallhavenWallpaper();
+      }
+    }
   }
 
   void _updateSlideshowState() {
@@ -238,6 +373,11 @@ class WallpaperService extends ChangeNotifier {
 
   File? _resolveActiveVideoFile() {
     if (!isInitialized) return null;
+    if (_settingsService.gistWallpaperEnabled) {
+      final media = _gistWallpaper;
+      return media != null && media.isVideo ? media.file : null;
+    }
+    if (_settingsService.wallhavenWallpaperEnabled) return null;
     if (_settingsService.redditWallpaperEnabled) return null;
     if (_settingsService.unsplashSlideshowEnabled) return null;
 
@@ -274,7 +414,13 @@ class WallpaperService extends ChangeNotifier {
 
     final slideshowFile = _slideshowFile;
     final redditFile = _redditFile;
-    if (_settingsService.redditWallpaperEnabled && redditFile != null && redditFile.existsSync()) {
+    final wallhavenFile = _wallhavenFile;
+    final gist = _gistWallpaper;
+    if (_settingsService.gistWallpaperEnabled && gist != null && !gist.isVideo && gist.file.existsSync()) {
+      newWallpaper = FileImage(gist.file);
+    } else if (_settingsService.wallhavenWallpaperEnabled && wallhavenFile != null && wallhavenFile.existsSync()) {
+      newWallpaper = FileImage(wallhavenFile);
+    } else if (_settingsService.redditWallpaperEnabled && redditFile != null && redditFile.existsSync()) {
       newWallpaper = FileImage(redditFile);
     } else if (_settingsService.unsplashSlideshowEnabled && slideshowFile != null && slideshowFile.existsSync()) {
       newWallpaper = FileImage(slideshowFile);
@@ -335,13 +481,21 @@ class WallpaperService extends ChangeNotifier {
     await _saveVideo(sourceFile, _wallpaperNightVideoFile);
   }
 
-  Future<void> _saveImage(File sourceFile, File targetFile) async {
+  Future<void> _disableOnlineWallpapers() async {
+    if (_settingsService.gistWallpaperEnabled) await _settingsService.setGistWallpaperEnabled(false);
+    if (_settingsService.wallhavenWallpaperEnabled) {
+      await _settingsService.setWallhavenWallpaperEnabled(false);
+    }
     if (_settingsService.redditWallpaperEnabled) {
       await _settingsService.setRedditWallpaperEnabled(false);
     }
     if (_settingsService.unsplashSlideshowEnabled) {
       await _settingsService.setUnsplashSlideshowEnabled(false);
     }
+  }
+
+  Future<void> _saveImage(File sourceFile, File targetFile) async {
+    await _disableOnlineWallpapers();
     await _replacePairedVideo(targetFile);
 
     final readStream = sourceFile.openRead();
@@ -356,12 +510,7 @@ class WallpaperService extends ChangeNotifier {
       throw StateError('Unable to read the selected image');
     }
 
-    if (_settingsService.redditWallpaperEnabled) {
-      await _settingsService.setRedditWallpaperEnabled(false);
-    }
-    if (_settingsService.unsplashSlideshowEnabled) {
-      await _settingsService.setUnsplashSlideshowEnabled(false);
-    }
+    await _disableOnlineWallpapers();
 
     await _replacePairedVideo(targetFile);
     await targetFile.writeAsBytes(imageBytes, flush: true);
@@ -391,12 +540,7 @@ class WallpaperService extends ChangeNotifier {
       await pairedImage.delete();
     }
 
-    if (_settingsService.redditWallpaperEnabled) {
-      await _settingsService.setRedditWallpaperEnabled(false);
-    }
-    if (_settingsService.unsplashSlideshowEnabled) {
-      await _settingsService.setUnsplashSlideshowEnabled(false);
-    }
+    await _disableOnlineWallpapers();
 
     final readStream = sourceFile.openRead();
     final writeStream = targetVideoFile.openWrite();
@@ -416,12 +560,7 @@ class WallpaperService extends ChangeNotifier {
     await cleanImageWallpaperFiles();
     await cleanVideoWallpaperFiles();
 
-    if (_settingsService.redditWallpaperEnabled) {
-      await _settingsService.setRedditWallpaperEnabled(false);
-    }
-    if (_settingsService.unsplashSlideshowEnabled) {
-      await _settingsService.setUnsplashSlideshowEnabled(false);
-    }
+    await _disableOnlineWallpapers();
 
     await _settingsService.setGradientUuid(fLauncherGradient.uuid);
     // Drop the in-memory wallpaper provider so the gradient is shown instead of

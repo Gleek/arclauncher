@@ -104,7 +104,9 @@ class _FLauncherState extends State<FLauncher> with WidgetsBindingObserver {
             child: Consumer3<WallpaperService, SettingsService, WatchNextService>(
               builder: (_, wallpaperService, settingsService, watchNextService, __) {
                 final author = settingsService.showWallpaperCredits ? wallpaperService.slideshowAuthor : null;
-                final redditCredit = settingsService.showWallpaperCredits ? wallpaperService.redditWallpaperCredit : null;
+                final wallpaperCredit = settingsService.showWallpaperCredits
+                    ? wallpaperService.wallhavenWallpaperCredit ?? wallpaperService.redditWallpaperCredit
+                    : null;
                 final isBigPicture = settingsService.showWatchNextSection && settingsService.watchNextBigPictureMode;
                 final activeItem = isBigPicture ? watchNextService.activeHeroItem : null;
                 final heroUri = isBigPicture ? watchNextService.getPosterUriForItem(activeItem) : null;
@@ -155,14 +157,14 @@ class _FLauncherState extends State<FLauncher> with WidgetsBindingObserver {
                             )
                           : const SizedBox.shrink(key: ValueKey('no_hero_bg')),
                     ),
-                    if (redditCredit != null && !hasHeroBackdrop)
+                    if (wallpaperCredit != null && !hasHeroBackdrop)
                       Positioned(
                         right: 24,
                         top: 64,
                         child: Material(
                           type: MaterialType.transparency,
                           child: Text(
-                            redditCredit,
+                            wallpaperCredit,
                             style: Theme.of(context).textTheme.bodySmall?.copyWith(
                               color: Colors.white70,
                               shadows: const [Shadow(blurRadius: 4)],

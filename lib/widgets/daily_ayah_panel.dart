@@ -6,6 +6,8 @@ import '../actions.dart';
 import 'qcf_ayah_text.dart';
 
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import '../providers/remote_feed.dart';
 import 'package:flutter/services.dart';
 
 const _gold = Color(0xFFE1C58A);
@@ -77,6 +79,7 @@ class _DailyAyahPanelState extends State<DailyAyahPanel>
 
   @override
   Widget build(BuildContext context) {
+    final remotePassages = context.watch<AyahFeed?>()?.value;
     return Focus(
     canRequestFocus: false,
     onKeyEvent: (_, event) {
@@ -92,7 +95,7 @@ class _DailyAyahPanelState extends State<DailyAyahPanel>
       child: FutureBuilder<List<dynamic>>(
         future: _passages,
         builder: (context, snapshot) {
-          final passages = snapshot.data;
+          final passages = remotePassages ?? snapshot.data;
           if (passages == null || passages.isEmpty) return const SizedBox.shrink();
           final passage =
               passages[dailyAyahIndex(DateTime.now(), passages.length)]

@@ -373,5 +373,20 @@
     "calendarHelp": "Shows the next seven days on Home without taking remote focus. Refreshes every 15 minutes. Use Google Calendar’s secret iCal address and keep it private.",
     "calendarCancel": "Cancel",
     "calendarDayEmpty": "No events",
-    "calendarContinues": "Continues"
+    "calendarContinues": "Continues",
+    "wallhavenWallpaper": "Wallhaven wallpaper",
+    "wallhavenEnable": "Show Wallhaven wallpapers",
+    "wallhavenSearchTerms": "Search terms",
+    "wallhavenSearchTermsHelp": "Separate terms with commas, e.g. nature, mountains, ocean. Each change picks a random term, then a random landscape photo.",
+    "wallhavenNextWallpaper": "Next wallpaper",
+    "wallhavenWallpaperFailed": "No wallpaper found. Check your search terms and connection.",
+    "wallhavenAttribution": "Wallpapers from Wallhaven \u00b7 https://wallhaven.cc",
+    "gistWallpaper": "Gist wallpapers",
+    "gistWallpaperEnable": "Use wallpapers from Gist",
+    "gistWallpaperHelp": "One direct HTTPS image or video URL per line. Blank lines and lines starting with # are ignored. Refresh reloads the list; Next wallpaper picks a random entry. Downloads are kept for offline playback.",
+    "gistWallpaperFailed": "Could not download a wallpaper. Check the feed and media URLs.",
+    "feedRefresh": "Refresh content",
+    "feedRefreshed": "Content refreshed",
+    "feedRefreshFailed": "Refresh failed. Keeping the last working content.",
+    "refreshAyahs": "Refresh ayahs"
 }
